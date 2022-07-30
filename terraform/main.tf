@@ -13,7 +13,7 @@ module "aws_s3_bucket" {
   s3_bucket_name = local.s3_bucket_name
 }
 
-module "" {
+module "aws_cloudfront" {
   source                 = "./modules/cloudfront"
   alternate_domain_names = local.alternate_domain_names
 }

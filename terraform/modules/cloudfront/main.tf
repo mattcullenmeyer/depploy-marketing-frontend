@@ -39,7 +39,7 @@ resource "aws_cloudfront_distribution" "cloudfront_distribution" {
   viewer_certificate {
     # TODO: Add this
   }
-  
+
   custom_error_response {
     # TODO: Add this
   }
