@@ -3,9 +3,9 @@ variable "alternate_domain_names" {
   description = "List of alternate domain names"
 }
 
-variable "s3_bucket_domain_name" {
+variable "s3_bucket_regional_domain_name" {
   type        = string
-  description = "Domain name of the S3 bucket"
+  description = "The bucket region-specific domain name"
 }
 
 variable "s3_bucket_id" {

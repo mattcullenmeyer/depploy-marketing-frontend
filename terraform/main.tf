@@ -14,16 +14,17 @@ module "aws_acm" {
 }
 
 module "aws_s3_bucket" {
-  source         = "./modules/s3"
-  s3_bucket_name = local.domain_name
+  source                                    = "./modules/s3"
+  s3_bucket_name                            = local.domain_name
+  cloudfront_origin_access_identity_iam_arn = module.aws_cloudfront.cloudfront_origin_access_identity_iam_arn
 }
 
 module "aws_cloudfront" {
-  source                 = "./modules/cloudfront"
-  alternate_domain_names = local.alternate_domain_names
-  s3_bucket_domain_name  = module.aws_s3_bucket.s3_bucket_domain_name
-  s3_bucket_id           = module.aws_s3_bucket.s3_bucket_id
-  acm_certificate_arn    = module.aws_acm.acm_certificate_arn
+  source                         = "./modules/cloudfront"
+  alternate_domain_names         = local.alternate_domain_names
+  s3_bucket_regional_domain_name = module.aws_s3_bucket.s3_bucket_regional_domain_name
+  s3_bucket_id                   = module.aws_s3_bucket.s3_bucket_id
+  acm_certificate_arn            = module.aws_acm.acm_certificate_arn
 }
 
 module "aws_route_53" {

@@ -4,7 +4,7 @@ resource "aws_cloudfront_origin_access_identity" "cloudfront_origin_access_ident
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution
 resource "aws_cloudfront_distribution" "cloudfront_distribution" {
   origin {
-    domain_name = var.s3_bucket_domain_name
+    domain_name = var.s3_bucket_regional_domain_name
     origin_id = var.s3_bucket_id
 
     s3_origin_config {
@@ -20,18 +20,19 @@ resource "aws_cloudfront_distribution" "cloudfront_distribution" {
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = var.s3_bucket_id
-    min_ttl                = 1
-    default_ttl            = 86400
-    max_ttl                = 31536000
-    compress               = true
-    viewer_protocol_policy = "redirect-to-https"
-
+    
     forwarded_values {
       query_string = false
       cookies {
         forward = "none"
       }
     }
+
+    viewer_protocol_policy = "redirect-to-https"
+    min_ttl                = 1
+    default_ttl            = 86400
+    max_ttl                = 31536000
+    compress               = true
   }
 
   restrictions {
