@@ -46,3 +46,21 @@ resource "aws_s3_bucket_public_access_block" "s3_bucket_block_public_access" {
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy
+resource "aws_s3_bucket_policy" "s3_bucket_policy" {
+  bucket = aws_s3_bucket.s3_bucket.id
+  policy = data.aws_iam_policy_document.s3_bucket_policy.json
+}
+
+data "aws_iam_policy_document" "s3_bucket_policy" {
+  statement {
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.s3_bucket.arn}/*"]
+
+    principals {
+      type        = "AWS"
+      identifiers = [var.cloudfront_origin_access_identity_iam_arn]
+    }
+  }
+}
