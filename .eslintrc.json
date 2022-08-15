@@ -1,12 +1,9 @@
 {
-  "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "react"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "next"
+    "next",
+    "prettier"
   ],
   "rules": {
     "import/prefer-default-export": "off",
