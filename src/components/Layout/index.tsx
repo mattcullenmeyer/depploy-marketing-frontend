@@ -1,5 +1,5 @@
 import { Box } from '@twilio-paste/core/box';
-import styles from './layout.module.css';
+import styles from './layout.module.scss';
 
 interface LayoutProps {
   children: React.ReactElement;

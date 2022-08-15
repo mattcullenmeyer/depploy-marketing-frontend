@@ -4,7 +4,7 @@ import { Stack } from '@twilio-paste/core/stack';
 import { Text } from '@twilio-paste/core/text';
 import { useRouter } from 'next/router';
 import { MenuLink } from './components/MenuLink';
-import styles from './topNav.module.css';
+import styles from './topNav.module.scss';
 
 export function TopNav(): React.ReactElement {
   const router = useRouter();

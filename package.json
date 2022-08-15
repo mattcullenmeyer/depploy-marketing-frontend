@@ -11,6 +11,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
+    "*.scss": "prettier --write",
     "*.{js,jsx,ts,tsx,json}": "prettier --write",
     "src/**/*.(js,jsx,ts,tsx)": "eslint --fix"
   },
@@ -32,6 +33,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "sass": "^1.54.4",
     "typescript": "^4.7.4"
   },
   "resolutions": {
