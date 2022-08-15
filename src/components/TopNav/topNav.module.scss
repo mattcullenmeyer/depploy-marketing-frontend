@@ -1,3 +1,5 @@
+$top-nav-height: 60px;
+
 .top_nav_container {
   border-bottom: 1px solid rgb(236, 239, 241);
 }
@@ -7,7 +9,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.5rem;
-  height: 60px;
+  height: $top-nav-height;
 }
 
 .login_link:hover {
@@ -16,7 +18,7 @@
 }
 
 .menu_link {
-  height: 60px;
+  height: $top-nav-height;
 }
 
 .menu_link:hover {
