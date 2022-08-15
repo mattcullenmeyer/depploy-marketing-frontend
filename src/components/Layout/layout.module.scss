@@ -1,0 +1,24 @@
+.layout {
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media screen and (min-width: $tablet-min-width) {
+  .layout {
+    padding-top: 0.75rem;
+    padding-left: 4.75rem;
+    padding-right: 4.75rem;
+  }
+}
+
+@media screen and (min-width: $desktop-min-width) {
+  .layout {
+    padding-top: 2.25rem;
+    padding-left: 4.75rem;
+    padding-right: 4.75rem;
+  }
+}

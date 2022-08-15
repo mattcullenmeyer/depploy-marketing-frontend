@@ -1,0 +1,39 @@
+$top-nav-height: 60px;
+
+.top_nav_container {
+  border-bottom: 1px solid rgb(236, 239, 241);
+}
+
+.top_nav_layout {
+  max-width: $max-width !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+  height: $top-nav-height;
+}
+
+.login_link:hover {
+  color: $primary-color;
+  cursor: pointer;
+}
+
+.menu_link {
+  height: $top-nav-height;
+}
+
+.menu_link:hover {
+  border-bottom: 3px solid $primary-color;
+  border-top: 3px solid rgb(255, 255, 255);
+}
+
+@media screen and (min-width: $tablet-min-width) {
+  .top_nav_layout {
+    padding: 0 4.75rem;
+  }
+}
+
+@media screen and (min-width: $desktop-min-width) {
+  .top_nav_layout {
+    padding: 0 4.75rem;
+  }
+}

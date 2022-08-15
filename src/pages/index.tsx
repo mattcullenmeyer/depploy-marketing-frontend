@@ -9,7 +9,7 @@ import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <Box as="main" padding="space70">
+    <Box as="main">
       <Head>
         <title>Paste NextJS App</title>
         <link rel="icon" href="/favicon.ico" />
