@@ -12,14 +12,13 @@ export function MenuLink({ href, label }: MenuLinkProps): React.ReactElement {
     <Box
       as="a"
       href={href}
-      display="flex"
       alignItems="center"
       textDecoration="none"
       className={styles.menu_link}
     >
       <Text
         as="div"
-        fontSize="fontSize40"
+        fontSize="fontSize30"
         fontWeight="fontWeightSemibold"
         textDecoration="none"
       >

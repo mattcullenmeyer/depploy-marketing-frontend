@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <Box as="main">
       <Head>
-        <title>Paste NextJS App</title>
+        <title>Depploy - IaC Platform</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
