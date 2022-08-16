@@ -12,13 +12,9 @@ $top-nav-height: 60px;
   height: $top-nav-height;
 }
 
-.login_link:hover {
-  color: $primary-color;
-  cursor: pointer;
-}
-
 .menu_link {
   height: $top-nav-height;
+  display: none;
 }
 
 .menu_link:hover {
@@ -26,14 +22,51 @@ $top-nav-height: 60px;
   border-top: 3px solid rgb(255, 255, 255);
 }
 
+.menu_nav_button {
+  display: flex;
+}
+
+.menu_signup_button {
+  display: none;
+}
+
+.mobile_menu_link:hover {
+  color: $primary-color;
+  text-decoration: underline;
+}
+
 @media screen and (min-width: $tablet-min-width) {
   .top_nav_layout {
     padding: 0 4.75rem;
+  }
+
+  .menu_link {
+    display: none;
+  }
+
+  .menu_nav_button {
+    display: flex;
+  }
+
+  .menu_signup_button {
+    display: flex;
   }
 }
 
 @media screen and (min-width: $desktop-min-width) {
   .top_nav_layout {
     padding: 0 4.75rem;
+  }
+
+  .menu_link {
+    display: flex;
+  }
+
+  .menu_nav_button {
+    display: none;
+  }
+
+  .menu_signup_button {
+    display: flex;
   }
 }
