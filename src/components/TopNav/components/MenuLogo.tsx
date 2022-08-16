@@ -19,7 +19,7 @@ export function MenuLogo() {
             Depploy
           </Text>
           <Text as="div" fontSize="fontSize30" fontWeight="fontWeightMedium">
-            IaC Platform
+            Infrastructure as Code
           </Text>
         </Stack>
       </Stack>
