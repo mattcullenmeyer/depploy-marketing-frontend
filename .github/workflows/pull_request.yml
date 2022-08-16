@@ -1,12 +1,12 @@
-name: terraform
+name: Pull Request Actions
 
 on:
   pull_request:
 
 jobs:
   terraform:
-    runs-on: ubuntu-latest
     name: Terraform Plan
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./terraform
