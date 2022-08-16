@@ -1,9 +1,9 @@
 provider "aws" {
-  region = var.aws_region
+  region = "us-east-1"
 }
 
 module "aws_deployment" {
   source                 = "../../infra"
-  domain_name            = var.domain_name
-  alternate_domain_names = var.alternate_domain_names
+  domain_name            = "depploy.io"
+  alternate_domain_names = ["depploy.io"]
 }
