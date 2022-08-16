@@ -38,7 +38,11 @@ jobs:
 
       - name: Terraform Plan
         # id: init
-        run: terraform plan
+        run: |
+          terraform plan \
+            -var 'aws_region=us-east-1' \
+            -var 'domain_name=depploy.io' \
+            -var 'alternate_domain_names=["depploy.io"]'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
