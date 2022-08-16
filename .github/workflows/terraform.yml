@@ -9,7 +9,8 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
-    environment: production
+    # environment: production
+    name: testing
     defaults:
       run:
         working-directory: ./terraform
