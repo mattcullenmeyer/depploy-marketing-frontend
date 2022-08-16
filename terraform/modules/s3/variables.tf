@@ -5,5 +5,5 @@ variable "s3_bucket_name" {
 
 variable "cloudfront_origin_access_identity_iam_arn" {
   description = "A pre-generated ARN for use in S3 bucket policies"
-  type = string
+  type        = string
 }
