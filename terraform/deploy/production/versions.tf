@@ -1,4 +1,6 @@
 terraform {
+  required_version = "1.2.5"
+
   backend "s3" {
     bucket         = "depploy-terraform-state-production"
     key            = "state/terraform.tfstate"

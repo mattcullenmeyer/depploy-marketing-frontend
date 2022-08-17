@@ -5,7 +5,7 @@ on:
 
 jobs:
   terraform-staging:
-    name: Terraform Staging Plan
+    name: Terraform Plan Staging
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.2.7
+          terraform_version: 1.2.5
 
       - name: Terraform Init
         run: terraform init
@@ -37,7 +37,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   terraform-production:
-    name: Terraform Production Plan
+    name: Terraform Plan Production
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -49,7 +49,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.2.7
+          terraform_version: 1.2.5
 
       - name: Terraform Init
         run: terraform init

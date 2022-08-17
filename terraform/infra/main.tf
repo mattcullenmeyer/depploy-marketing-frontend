@@ -21,6 +21,7 @@ module "aws_route_53" {
   source                             = "../modules/route53"
   hosted_zone_domain_name            = var.domain_name
   hosted_zone_record_name            = var.domain_name
+  hosted_zone_id                     = var.route53_zone_id
   cloudfront_domain_name             = module.aws_cloudfront.cloudfront_domain_name
   cloudfront_hosted_zone_id          = module.aws_cloudfront.cloudfront_hosted_zone_id
   acm_certificate_validation_options = module.aws_acm.acm_certificate_validation_options
