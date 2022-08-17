@@ -4,12 +4,12 @@ on:
   pull_request:
 
 jobs:
-  terraform:
-    name: Terraform Plan
+  terraform-staging:
+    name: Terraform Plan Staging
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./terraform
+        working-directory: ./terraform/deploy/staging
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -17,10 +17,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.2.7
-
-      - name: Terraform Format
-        run: terraform fmt -check
+          terraform_version: 1.2.5
 
       - name: Terraform Init
         run: terraform init
@@ -33,11 +30,39 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: |
-          terraform plan \
-            -var 'aws_region=us-east-1' \
-            -var 'domain_name=depploy.io' \
-            -var 'alternate_domain_names=["depploy.io"]'
+        run: terraform plan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  terraform-production:
+    name: Terraform Plan Production
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./terraform/deploy/production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.2.5
+
+      - name: Terraform Init
+        run: terraform init
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

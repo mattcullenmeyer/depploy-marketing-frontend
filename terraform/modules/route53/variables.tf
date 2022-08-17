@@ -8,6 +8,11 @@ variable "hosted_zone_record_name" {
   description = "Route 53 hosted zone record name"
 }
 
+variable "hosted_zone_id" {
+  type        = string
+  description = "Route 53 hosted zone ID"
+}
+
 variable "cloudfront_domain_name" {
   type        = string
   description = "CloudFront distribution domain name"
