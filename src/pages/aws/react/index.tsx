@@ -23,7 +23,7 @@ const AwsReact = () => {
       >
         <Box maxWidth="380px" marginTop="space200">
           <Text
-            as="h2"
+            as="h1"
             fontSize="fontSize100"
             fontWeight="fontWeightSemibold"
             lineHeight="lineHeight100"
