@@ -5,6 +5,12 @@ const sassOptions = {
   prependData: `@import "./src/styles/variables.scss";`,
 };
 
+// https://nextjs.org/docs/messages/export-image-api
+const images = {
+  loader: "akamai",
+  path: "/",
+};
+
 module.exports = (phase, { defaultConfig }) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
@@ -16,5 +22,6 @@ module.exports = (phase, { defaultConfig }) => {
   return {
     ...defaultConfig,
     sassOptions,
+    images,
   };
 };
