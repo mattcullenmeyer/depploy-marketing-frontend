@@ -1,0 +1,51 @@
+.deployReactImage {
+  border: solid 2px rgb(225, 227, 234);
+  background-color: white;
+  padding: 1px;
+  border-radius: 4px;
+  box-shadow: 0 8px 12px 1px rgb(29 17 51 / 4%),
+    0 3px 16px 2px rgb(9 32 77 / 12%), 0 5px 10px -3px rgb(29 17 51 / 12%);
+}
+
+.container {
+  flex-direction: column;
+
+  .containerLeftHalf {
+    align-items: center;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: $tablet-min-width) {
+  .container {
+    flex-direction: column;
+
+    .containerLeftHalf {
+      align-items: center;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-min-width) {
+  .container {
+    flex-direction: row;
+
+    .containerLeftHalf {
+      align-items: flex-start;
+    }
+
+    h1,
+    h2 {
+      text-align: left;
+    }
+  }
+}
