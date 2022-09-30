@@ -1,4 +1,15 @@
+// colors
 $primary-color: rgb(2, 99, 224);
-$max-width: 1350px;
+$secondary-color: rgb(145, 23, 255);
+
+$font-family: 'Inter var experimental', 'Inter var', 'Segoe UI', Roboto,
+  sans-serif;
+$box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px;
+
+// screen widths
+$extra-small-screen-min-width: 320px;
+$tablet-min-width: 480px;
+$small-screen-min-width: 768px;
 $desktop-min-width: 1024px;
-$tablet-min-width: 768px;
+$large-screen-min-width: 1200px;
+$max-width: 1350px;

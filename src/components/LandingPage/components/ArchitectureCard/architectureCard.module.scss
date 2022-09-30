@@ -1,0 +1,11 @@
+.architectureCard {
+  box-shadow: $box-shadow;
+  padding: 20px;
+  border: 2px solid rgb(225, 227, 234);
+  border-radius: 7px;
+  transition: transform 0.2s;
+}
+
+.architectureCard:hover {
+  transform: scale(1.06);
+}
