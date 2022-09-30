@@ -24,18 +24,6 @@
 }
 
 @media screen and (min-width: $extra-small-screen-min-width) {
-  // .container {
-  //   flex-direction: column;
-
-  //   .containerLeftHalf {
-  //     align-items: center;
-  //   }
-
-  //   h1,
-  //   h2 {
-  //     text-align: center;
-  //   }
-  // }
   .architectureCardGrid {
     grid-template-columns: 300px;
   }
