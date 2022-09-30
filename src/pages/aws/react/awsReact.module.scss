@@ -3,8 +3,7 @@
   background-color: white;
   padding: 1px;
   border-radius: 4px;
-  box-shadow: 0 8px 12px 1px rgb(29 17 51 / 4%),
-    0 3px 16px 2px rgb(9 32 77 / 12%), 0 5px 10px -3px rgb(29 17 51 / 12%);
+  box-shadow: $box-shadow;
 }
 
 .container {
@@ -20,18 +19,37 @@
   }
 }
 
+.architectureCardGrid {
+  grid-template-columns: 100%;
+}
+
+@media screen and (min-width: $extra-small-screen-min-width) {
+  // .container {
+  //   flex-direction: column;
+
+  //   .containerLeftHalf {
+  //     align-items: center;
+  //   }
+
+  //   h1,
+  //   h2 {
+  //     text-align: center;
+  //   }
+  // }
+  .architectureCardGrid {
+    grid-template-columns: 300px;
+  }
+}
+
 @media screen and (min-width: $tablet-min-width) {
-  .container {
-    flex-direction: column;
+  .architectureCardGrid {
+    grid-template-columns: 225px 225px;
+  }
+}
 
-    .containerLeftHalf {
-      align-items: center;
-    }
-
-    h1,
-    h2 {
-      text-align: center;
-    }
+@media screen and (min-width: $small-screen-min-width) {
+  .architectureCardGrid {
+    grid-template-columns: 300px 300px;
   }
 }
 
@@ -47,5 +65,15 @@
     h2 {
       text-align: left;
     }
+  }
+
+  .architectureCardGrid {
+    grid-template-columns: 275px 275px;
+  }
+}
+
+@media screen and (min-width: $large-screen-min-width) {
+  .architectureCardGrid {
+    grid-template-columns: 300px 300px;
   }
 }
