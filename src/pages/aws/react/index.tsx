@@ -13,7 +13,7 @@ import {
 import deployReactImg from '/images/aws-react.png';
 import backgroundShapesImg from '/images/background-shapes-1.svg';
 import styles from './awsReact.module.scss';
-import { words } from './words';
+import { words } from '../../../words/pages/aws/react.words';
 
 const AwsReact = () => {
   return (
