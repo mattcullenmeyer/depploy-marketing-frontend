@@ -15,6 +15,7 @@ module "aws_cloudfront" {
   s3_bucket_regional_domain_name = module.aws_s3_bucket.s3_bucket_regional_domain_name
   s3_bucket_id                   = module.aws_s3_bucket.s3_bucket_id
   acm_certificate_arn            = module.aws_acm.acm_certificate_arn
+  lambda_routing_arn             = module.aws_lambda_function.lambda_routing_arn
 }
 
 module "aws_route_53" {
@@ -25,4 +26,16 @@ module "aws_route_53" {
   cloudfront_domain_name             = module.aws_cloudfront.cloudfront_domain_name
   cloudfront_hosted_zone_id          = module.aws_cloudfront.cloudfront_hosted_zone_id
   acm_certificate_validation_options = module.aws_acm.acm_certificate_validation_options
+}
+
+module "aws_iam" {
+  source                  = "../modules/iam"
+  lambda_role_name        = "ServiceRoleForLambdaRouting-${var.name}"
+  lambda_role_policy_name = "LambdaEdgeExecutionRole-${var.name}"
+}
+
+module "aws_lambda_function" {
+  source        = "../modules/lambda"
+  function_name = "${var.name}-routing"
+  iam_role_arn  = module.aws_iam.iam_for_lambda_arn
 }

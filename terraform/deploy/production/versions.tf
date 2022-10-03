@@ -1,5 +1,6 @@
 terraform {
-  required_version = "1.2.5"
+  # Be sure to update CI/CD pipeline with same Terraform version!
+  required_version = "1.2.9"
 
   backend "s3" {
     bucket         = "depploy-terraform-state-production"

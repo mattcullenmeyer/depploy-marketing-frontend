@@ -17,3 +17,8 @@ variable "acm_certificate_arn" {
   type        = string
   description = "The ARN of the AWS certificate"
 }
+
+variable "lambda_routing_arn" {
+  type        = string
+  description = "The ARN of the AWS Lambda function for routing"
+}
