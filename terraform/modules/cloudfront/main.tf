@@ -28,6 +28,12 @@ resource "aws_cloudfront_distribution" "cloudfront_distribution" {
     cache_policy_id        = local.managed_caching_optimized_id
     viewer_protocol_policy = "redirect-to-https"
     compress               = true
+
+    lambda_function_association {
+      event_type   = "origin-request"
+      include_body = false
+      lambda_arn   = var.lambda_routing_arn
+    }
   }
 
   price_class = "PriceClass_All"

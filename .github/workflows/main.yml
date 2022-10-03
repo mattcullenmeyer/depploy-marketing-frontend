@@ -48,6 +48,7 @@ jobs:
 
   deploy-production:
     name: Deploy to Production
+    needs: deploy-staging
     runs-on: ubuntu-latest
     environment: production
     timeout-minutes: 10
@@ -89,6 +90,7 @@ jobs:
   terraform-staging:
     name: Terraform Apply Staging
     runs-on: ubuntu-latest
+    environment: staging
     defaults:
       run:
         working-directory: ./terraform/deploy/staging
@@ -99,7 +101,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          terraform_version: 1.2.5
+          terraform_version: 1.2.9
 
       - name: Terraform Init
         run: terraform init
