@@ -1,6 +1,7 @@
 import { Box } from '@twilio-paste/core/box';
 import { Text } from '@twilio-paste/core/text';
 import { CtaButton } from '../CtaButton';
+import { Paragraph } from '../Paragraph';
 import styles from './featureSection.module.scss';
 import globalStyles from '../../../../styles/variables.module.scss';
 
@@ -11,6 +12,7 @@ interface FeatureSectionProps {
   buttonText: string;
   onClickButton: () => void;
   hasBorderTop?: boolean;
+  reverse?: boolean;
   children: React.ReactElement;
 }
 
@@ -21,6 +23,7 @@ export function FeatureSection({
   buttonText,
   onClickButton,
   hasBorderTop = false,
+  reverse = false,
   children,
 }: FeatureSectionProps) {
   return (
@@ -35,7 +38,9 @@ export function FeatureSection({
         borderTop: hasBorderTop ? '1px solid rgba(91, 97, 110, 0.2)' : 'none',
         marginTop: hasBorderTop ? '80px' : '0',
       }}
-      className={styles.featureSectionContainer}
+      className={`${styles.featureSectionContainer} ${
+        reverse ? styles.reverse : ''
+      }`}
     >
       <Box className={styles.textColumn}>
         <Text
@@ -58,15 +63,7 @@ export function FeatureSection({
         >
           {title}
         </Text>
-        <Text
-          as="p"
-          fontSize="fontSize60"
-          fontWeight="fontWeightNormal"
-          lineHeight="lineHeight70"
-          marginBottom="space80"
-        >
-          {summary}
-        </Text>
+        <Paragraph text={summary} />
         <CtaButton buttonText={buttonText} onClickButton={onClickButton} />
       </Box>
       <Box className={styles.imageColumn}>{children}</Box>

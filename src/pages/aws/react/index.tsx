@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Box } from '@twilio-paste/core/box';
-import { Button } from '@twilio-paste/core/button';
-import { Text } from '@twilio-paste/core/text';
+import { HeroSection } from '../../../components/LandingPage/components/HeroSection';
 import { FeatureSection } from '../../../components/LandingPage/components/FeatureSection';
 import {
   AwsS3Card,
@@ -12,53 +11,16 @@ import {
 } from '../../../components/LandingPage/components/ArchitectureCard/AWS';
 import deployReactImg from '/images/aws-react.png';
 import backgroundShapesImg from '/images/background-shapes-1.svg';
-import styles from './awsReact.module.scss';
+import styles from '../../../styles/pages/aws/awsReact.module.scss';
 import { words } from '../../../words/pages/aws/react.words';
 
 const AwsReact = () => {
   return (
     <Box display="flex" flexDirection="column" marginBottom="space200">
-      <Box
-        as="section"
-        display="flex"
-        justifyContent="space-between"
-        className={styles.container}
-        marginBottom="space200"
+      <HeroSection
+        heading1="Deploy React to AWS the easy way."
+        heading2="Get your React app into production on AWS in minutes with Depploy."
       >
-        <Box
-          width="450x"
-          display="flex"
-          flexDirection="column"
-          marginBottom="space200"
-          className={styles.containerLeftHalf}
-        >
-          <Box maxWidth="380px" marginTop="space200">
-            <Text
-              as="h1"
-              fontSize="fontSize100"
-              fontWeight="fontWeightSemibold"
-              lineHeight="lineHeight100"
-              marginBottom="space40"
-            >
-              Deploy React to AWS the easy way.
-            </Text>
-          </Box>
-          <Box maxWidth="370px" marginBottom="space120">
-            <Text
-              as="h2"
-              fontSize="fontSize60"
-              fontWeight="fontWeightMedium"
-              lineHeight="lineHeight70"
-            >
-              Get your React app into production on AWS in minutes with Depploy.
-            </Text>
-          </Box>
-          <Box width="150px">
-            <Button variant="primary" fullWidth>
-              Deploy React
-            </Button>
-          </Box>
-        </Box>
         <Box flexGrow={1} display="flex" justifyContent="center">
           <Box width="500px" position="relative">
             <Box
@@ -80,7 +42,7 @@ const AwsReact = () => {
             </Box>
           </Box>
         </Box>
-      </Box>
+      </HeroSection>
 
       <FeatureSection
         name={words.infrastructureSection.name}
@@ -103,14 +65,40 @@ const AwsReact = () => {
           <AwsCertificateManagerCard />
         </Box>
       </FeatureSection>
+
+      <FeatureSection
+        name={words.simplicitySection.name}
+        title={words.simplicitySection.title}
+        summary={words.simplicitySection.summary}
+        buttonText={words.simplicitySection.buttonText}
+        onClickButton={() => {}}
+        reverse
+      >
+        <></>
+      </FeatureSection>
+
+      <FeatureSection
+        name={words.freedomSection.name}
+        title={words.freedomSection.title}
+        summary={words.freedomSection.summary}
+        buttonText={words.freedomSection.buttonText}
+        onClickButton={() => {}}
+      >
+        <></>
+      </FeatureSection>
+
+      <FeatureSection
+        name={words.customizationSection.name}
+        title={words.customizationSection.title}
+        summary={words.customizationSection.summary}
+        buttonText={words.customizationSection.buttonText}
+        onClickButton={() => {}}
+        reverse
+      >
+        <></>
+      </FeatureSection>
     </Box>
   );
 };
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  };
-}
 
 export default AwsReact;

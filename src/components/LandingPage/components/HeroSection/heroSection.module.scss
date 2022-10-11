@@ -1,0 +1,37 @@
+.heroSectionContainer {
+  flex-direction: column;
+
+  .textColumn {
+    // width: 100%;
+    align-items: center;
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+  }
+
+  // .imageColumn {
+  //   width: 100%;
+  // }
+}
+
+@media screen and (min-width: $desktop-min-width) {
+  .heroSectionContainer {
+    flex-direction: row;
+
+    .textColumn {
+      // width: 50%;
+      align-items: flex-start;
+
+      h1,
+      h2 {
+        text-align: left;
+      }
+    }
+
+    // .imageColumn {
+    //   width: 50%;
+    // }
+  }
+}
