@@ -18,7 +18,7 @@ export const words = {
     name: 'FREEDOM',
     title: 'Stay in control of your infrastructure and costs',
     summary: `Enjoy the features and savings of a large cloud platform that you'll never outgrow. 
-      Maintain direct access to your resources and we'll maintain them.`,
+      Maintain direct access to your resources without needing to maintain them.`,
     buttonText: 'Deploy React',
   },
   customizationSection: {
