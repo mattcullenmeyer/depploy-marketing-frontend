@@ -47,4 +47,26 @@
   @media screen and (min-width: $desktop-min-width) {
     padding-top: 2.25rem;
   }
+
+  .categoryGroup {
+    ul {
+      column-gap: 0.5rem;
+
+      a {
+        font-size: 14px;
+        padding: 0.5rem 0.75rem;
+        // text-decoration-line: none;
+        // border: 1px solid transparent;
+      }
+    }
+  }
+}
+
+.blogParagraph {
+  code {
+    background-color: rgb(225, 227, 234);
+    // background-color: $color-background;
+    border-radius: 8px;
+    padding: 3px;
+  }
 }

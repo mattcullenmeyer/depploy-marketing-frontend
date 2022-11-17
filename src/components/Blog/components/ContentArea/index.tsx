@@ -37,10 +37,14 @@ export function ContentArea({
 
       <BlogParagraph>{dateParagraph}</BlogParagraph>
 
-      <Box marginTop="space50" marginBottom="space50">
+      <Box
+        marginTop="space50"
+        marginBottom="space50"
+        className={styles.categoryGroup}
+      >
         <DisplayPillGroup aria-label="Blog Categories">
           {categories.map((category) => (
-            <DisplayPill href={`/blog?category=${category}`}>
+            <DisplayPill key={category} href={`/blog?category=${category}`}>
               {category}
             </DisplayPill>
           ))}

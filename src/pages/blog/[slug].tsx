@@ -12,6 +12,11 @@ import { ContentArea } from '../../components/Blog/components/ContentArea';
 import { RightSideNav } from '../../components/Blog/components/RightSideNav';
 import { BlogParagraph } from '../../components/Blog/components/BlogParagraph';
 import styles from './blog.module.scss';
+import {
+  CodeBlock,
+  CodeBlockHeader,
+  CodeBlockWrapper,
+} from '@twilio-paste/core/code-block';
 
 interface Post {
   title: string;
@@ -22,6 +27,22 @@ interface Post {
   categories: any[];
   image: any[];
 }
+
+// node_modules/@twilio-paste/code-block/dist/CodeBlock.d.ts
+type SnippetLanguages =
+  | 'javascript'
+  | 'jsx'
+  | 'csharp'
+  | 'php'
+  | 'ruby'
+  | 'python'
+  | 'java'
+  | 'json'
+  | 'c'
+  | 'bash'
+  | 'shell'
+  | 'go'
+  | 'groovy';
 
 interface PostProps {
   post: Post;
@@ -47,6 +68,17 @@ function urlFor(source: SanityImageSource) {
   return imageUrlBuilder(client).image(source).url();
 }
 
+const languages: Record<string, SnippetLanguages> = {
+  golang: 'go',
+};
+
+const getLanguage = (language: string): SnippetLanguages => {
+  if (languages[language]) {
+    return languages[language];
+  }
+  return language as SnippetLanguages;
+};
+
 const portableTextComponents = {
   types: {
     image: ({ value }: { value: ImageValue }) => {
@@ -60,6 +92,15 @@ const portableTextComponents = {
           // src={urlFor(value).width(320).height(240).fit('max').auto('format')}
           src={urlFor(value)}
         />
+      );
+    },
+    code: ({ value }: { value: any }) => {
+      const language = getLanguage(value.language);
+      return (
+        <CodeBlockWrapper>
+          <CodeBlockHeader>{language}</CodeBlockHeader>
+          <CodeBlock showLineNumbers language={language} code={value.code} />
+        </CodeBlockWrapper>
       );
     },
   },

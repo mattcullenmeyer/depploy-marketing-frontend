@@ -4,3 +4,5 @@
 `sanity start`
 
 Install Sanity.io VS Code extension
+
+`npm outdated`

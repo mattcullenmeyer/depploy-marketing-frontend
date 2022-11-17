@@ -19,7 +19,7 @@ export function LeftSideNav({
 
         <ul>
           {headings.map((heading) => (
-            <li>
+            <li key={heading}>
               <a href={`#${generateHref(heading)}`}>{heading}</a>
             </li>
           ))}
