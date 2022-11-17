@@ -41,6 +41,10 @@ export default {
       name: "publishedAt",
       title: "Published at",
       type: "datetime",
+      options: {
+        dateFormat: "MMMM DD, YYYY",
+        timeFormat: "h:m a",
+      },
     },
     {
       name: "body",

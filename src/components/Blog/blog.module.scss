@@ -1,0 +1,50 @@
+.sideNavContainer {
+  display: none;
+
+  @media screen and (min-width: $desktop-min-width) {
+    display: block;
+  }
+
+  .sideNav {
+    position: sticky;
+    top: 100px;
+
+    @media screen and (min-width: $desktop-min-width) {
+      top: 100px;
+    }
+
+    ul {
+      padding-inline-start: 0;
+    }
+
+    li {
+      list-style: none;
+      margin-bottom: 8px;
+
+      a {
+        font-size: 16px;
+        transition: color 0.2s ease 0s;
+        font-weight: 400;
+        text-decoration: none;
+        color: rgb(77, 91, 124);
+        line-height: 24px;
+      }
+
+      a:hover {
+        color: rgb(0, 12, 43);
+      }
+    }
+
+    li:hover {
+      border-right: 3px solid $primary-color;
+    }
+  }
+}
+
+.mainBody {
+  padding-top: 0.75rem;
+
+  @media screen and (min-width: $desktop-min-width) {
+    padding-top: 2.25rem;
+  }
+}

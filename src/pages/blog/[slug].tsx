@@ -1,31 +1,40 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import groq from 'groq';
+import imageUrlBuilder from '@sanity/image-url';
 import { PortableText } from '@portabletext/react';
 import { client } from '../../../client';
-import styles from './blog.module.scss';
 import { Box } from '@twilio-paste/core/box';
 import { Heading } from '@twilio-paste/core/heading';
-import React from 'react';
-import { Paragraph } from '@twilio-paste/core';
+import { Layout } from '../../components/Layout';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { LeftSideNav } from '../../components/Blog/components/LeftSideNav';
+import { ContentArea } from '../../components/Blog/components/ContentArea';
+import { RightSideNav } from '../../components/Blog/components/RightSideNav';
+import { BlogParagraph } from '../../components/Blog/components/BlogParagraph';
+import styles from './blog.module.scss';
 
-interface PostProps {
-  post: {
-    title: string;
-    body: any[];
-    // headings: any[];
-  };
+interface Post {
+  title: string;
+  body: any[];
+  author: string;
+  publishedAt: string;
+  _updatedAt: string;
+  categories: any[];
+  image: any[];
 }
 
-// interface PortableTextBlockComponent {
-//   children: [{ text: string }];
-// }
+interface PostProps {
+  post: Post;
+}
 
-// interface TextBlock {
-//   value: {
-//     children: [{ text: string }];
-//     style: string;
-//   };
-// }
+interface ImageValue {
+  _key: string;
+  _type: string;
+  asset: {
+    _ref: string;
+    _type: string;
+  };
+}
 
 const generateHref = (heading: string) => {
   const headingArray = heading.split(' ');
@@ -34,11 +43,30 @@ const generateHref = (heading: string) => {
   return result;
 };
 
+function urlFor(source: SanityImageSource) {
+  return imageUrlBuilder(client).image(source).url();
+}
+
 const portableTextComponents = {
+  types: {
+    image: ({ value }: { value: ImageValue }) => {
+      if (!value?.asset?._ref) {
+        return null;
+      }
+      return (
+        <img
+          // alt={value.alt || ' '}
+          loading="lazy"
+          // src={urlFor(value).width(320).height(240).fit('max').auto('format')}
+          src={urlFor(value)}
+        />
+      );
+    },
+  },
   block: {
-    normal: ({ children }: any) => <Paragraph>{children}</Paragraph>,
+    normal: ({ children }: any) => <BlogParagraph>{children}</BlogParagraph>,
     h2: ({ children }: any) => (
-      <Heading as="h2" variant="heading20">
+      <Heading id={generateHref(children[0])} as="h2" variant="heading20">
         {children}
       </Heading>
     ),
@@ -46,47 +74,46 @@ const portableTextComponents = {
 };
 
 function Post({ post }: PostProps) {
-  if (!post) {
-    return;
-  }
+  const {
+    title,
+    author,
+    body,
+    categories,
+    publishedAt,
+    _updatedAt: updatedAt,
+  } = post;
 
   const headingItems = post.body.filter((item) => item.style === 'h2');
   const headings = headingItems.map(({ children }) => children[0].text);
 
   return (
-    <Box className={styles.container}>
-      <Box>
-        <Heading as="div" variant="heading40">
-          Contents
-        </Heading>
-        <ul style={{ paddingInlineStart: '0' }}>
-          {headings.map((heading) => (
-            <li>
-              <a href={`#${generateHref(heading)}`}>{heading}</a>
-            </li>
-          ))}
-        </ul>
+    <Layout paddingTop={false}>
+      <Box className={styles.container}>
+        <LeftSideNav headings={headings} />
+
+        <ContentArea
+          title={title}
+          author={author}
+          categories={categories}
+          publishedAt={publishedAt}
+          updatedAt={updatedAt}
+        >
+          <PortableText value={body} components={portableTextComponents} />
+        </ContentArea>
+
+        <RightSideNav />
       </Box>
-      <Box>
-        <Heading as="h1" variant="heading10">
-          {post.title}
-        </Heading>
-        <PortableText value={post.body} components={portableTextComponents} />
-      </Box>
-      <Box>
-        <Heading as="div" variant="heading40">
-          Popular Posts
-        </Heading>
-      </Box>
-    </Box>
+    </Layout>
   );
 }
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   body,
-  // _updatedAt,
-  // "headings": body[string::startsWith(style, "h")],
+  "author": author->name,
+  publishedAt,
+  _updatedAt,
+  "categories": categories[]->title
 }`;
 
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -2,6 +2,8 @@ $top-nav-height: 60px;
 
 .top_nav_container {
   border-bottom: 1px solid rgb(236, 239, 241);
+  position: sticky;
+  top: 0;
 }
 
 .top_nav_layout {
@@ -20,7 +22,7 @@ $top-nav-height: 60px;
 
 .menu_link:hover {
   border-bottom: 3px solid $primary-color;
-  border-top: 3px solid rgb(255, 255, 255);
+  border-top: 3px solid transparent;
 }
 
 .menu_nav_button {

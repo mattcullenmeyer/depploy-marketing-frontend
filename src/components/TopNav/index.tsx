@@ -16,19 +16,29 @@ export function TopNav(): React.ReactElement {
   };
 
   return (
-    <Box as="header" className={styles.top_nav_container}>
+    <Box
+      as="header"
+      className={styles.top_nav_container}
+      backgroundColor="colorBackgroundBody"
+      zIndex="zIndex90"
+    >
       <Box
+        as="nav"
         display="flex"
         alignItems="center"
         justifyContent="space-between"
         className={styles.top_nav_layout}
       >
-        <MenuLogo />
-        <Box as="nav">
+        <Box style={{ display: 'flex', gap: '35px' }}>
+          <MenuLogo />
           <Stack orientation="horizontal" spacing="space60">
             <MenuLink href={links.products} label={words.products} />
             <MenuLink href={links.blog} label={words.blog} />
             <MenuLink href={links.pricing} label={words.pricing} />
+          </Stack>
+        </Box>
+        <Box>
+          <Stack orientation="horizontal" spacing="space60">
             <MenuLink href={links.signin} label={words.signin} />
             <Box className={styles.menu_signup_button}>
               <Button variant="primary" onClick={onClickGetStarted}>
