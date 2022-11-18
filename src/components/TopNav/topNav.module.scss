@@ -21,7 +21,7 @@ $top-nav-height: 60px;
 }
 
 .menu_link:hover {
-  border-bottom: 3px solid $primary-color;
+  border-bottom: 3px solid $color-primary;
   border-top: 3px solid transparent;
 }
 
@@ -35,7 +35,7 @@ $top-nav-height: 60px;
 }
 
 .mobile_menu_link:hover {
-  color: $primary-color;
+  color: $color-primary;
   text-decoration: underline;
 }
 

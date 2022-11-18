@@ -1,118 +1,26 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import groq from 'groq';
-import imageUrlBuilder from '@sanity/image-url';
-import { PortableText } from '@portabletext/react';
 import { client } from '../../../client';
 import { Box } from '@twilio-paste/core/box';
-import { Heading } from '@twilio-paste/core/heading';
 import { Layout } from '../../components/Layout';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { LeftSideNav } from '../../components/Blog/components/LeftSideNav';
-import { ContentArea } from '../../components/Blog/components/ContentArea';
 import { RightSideNav } from '../../components/Blog/components/RightSideNav';
-import { BlogParagraph } from '../../components/Blog/components/BlogParagraph';
+import { ContentContainer } from '../../components/Blog/components/ContentArea/Container';
 import styles from './blog.module.scss';
-import {
-  CodeBlock,
-  CodeBlockHeader,
-  CodeBlockWrapper,
-} from '@twilio-paste/core/code-block';
 
-interface Post {
+export interface PostStaticProps {
   title: string;
   body: any[];
   author: string;
+  categories: any[];
   publishedAt: string;
   _updatedAt: string;
-  categories: any[];
-  image: any[];
+  // image: any[];
 }
-
-// node_modules/@twilio-paste/code-block/dist/CodeBlock.d.ts
-type SnippetLanguages =
-  | 'javascript'
-  | 'jsx'
-  | 'csharp'
-  | 'php'
-  | 'ruby'
-  | 'python'
-  | 'java'
-  | 'json'
-  | 'c'
-  | 'bash'
-  | 'shell'
-  | 'go'
-  | 'groovy';
 
 interface PostProps {
-  post: Post;
+  post: PostStaticProps;
 }
-
-interface ImageValue {
-  _key: string;
-  _type: string;
-  asset: {
-    _ref: string;
-    _type: string;
-  };
-}
-
-const generateHref = (heading: string) => {
-  const headingArray = heading.split(' ');
-  const lowerCaseHeadingArray = headingArray.map((text) => text.toLowerCase());
-  const result = lowerCaseHeadingArray.join('-');
-  return result;
-};
-
-function urlFor(source: SanityImageSource) {
-  return imageUrlBuilder(client).image(source).url();
-}
-
-const languages: Record<string, SnippetLanguages> = {
-  golang: 'go',
-};
-
-const getLanguage = (language: string): SnippetLanguages => {
-  if (languages[language]) {
-    return languages[language];
-  }
-  return language as SnippetLanguages;
-};
-
-const portableTextComponents = {
-  types: {
-    image: ({ value }: { value: ImageValue }) => {
-      if (!value?.asset?._ref) {
-        return null;
-      }
-      return (
-        <img
-          // alt={value.alt || ' '}
-          loading="lazy"
-          // src={urlFor(value).width(320).height(240).fit('max').auto('format')}
-          src={urlFor(value)}
-        />
-      );
-    },
-    code: ({ value }: { value: any }) => {
-      const language = getLanguage(value.language);
-      return (
-        <CodeBlockWrapper>
-          <CodeBlockHeader>{language}</CodeBlockHeader>
-          <CodeBlock showLineNumbers language={language} code={value.code} />
-        </CodeBlockWrapper>
-      );
-    },
-  },
-  block: {
-    normal: ({ children }: any) => <BlogParagraph>{children}</BlogParagraph>,
-    h2: ({ children }: any) => (
-      <Heading id={generateHref(children[0])} as="h2" variant="heading20">
-        {children}
-      </Heading>
-    ),
-  },
-};
 
 function Post({ post }: PostProps) {
   const {
@@ -132,15 +40,14 @@ function Post({ post }: PostProps) {
       <Box className={styles.container}>
         <LeftSideNav headings={headings} />
 
-        <ContentArea
+        <ContentContainer
           title={title}
           author={author}
           categories={categories}
           publishedAt={publishedAt}
           updatedAt={updatedAt}
-        >
-          <PortableText value={body} components={portableTextComponents} />
-        </ContentArea>
+          body={body}
+        />
 
         <RightSideNav />
       </Box>

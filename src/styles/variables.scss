@@ -1,11 +1,22 @@
-// colors
-$primary-color: rgb(2, 99, 224);
-$secondary-color: rgb(145, 23, 255);
+// https://paste.twilio.design/tokens/design-tokens-package
+$color-primary: rgb(2, 99, 224);
+$color-secondary: rgb(145, 23, 255);
+
+$color-text-link: rgb(2, 99, 224);
+$color-text-link-dark: rgb(0, 140, 255);
+
+$color-text: rgb(18, 28, 45);
+$color-text-dark: rgb(244, 244, 246);
+
+$color-background: rgb(244, 244, 246);
+$color-background-dark: rgb(18, 28, 45);
+
+$color-border-weaker: rgb(225, 227, 234);
+$color-border-weaker-dark: rgb(31, 48, 76);
 
 $font-family: 'Inter var experimental', 'Inter var', 'Segoe UI', Roboto,
   sans-serif;
 $box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px;
-$light-border: 1px solid rgb(236, 239, 241);
 
 // screen widths
 $extra-small-screen-min-width: 320px;

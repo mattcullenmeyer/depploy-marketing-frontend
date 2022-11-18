@@ -2,19 +2,17 @@ import { Heading } from '@twilio-paste/core/heading';
 import { Box } from '@twilio-paste/core/box';
 import { BlogParagraph } from '../BlogParagraph';
 import { formatDate } from '../../helpers/formatDate';
-import styles from '../../blog.module.scss';
 import {
   DisplayPill,
   DisplayPillGroup,
 } from '@twilio-paste/core/display-pill-group';
+import { PostStaticProps } from '../../../../pages/blog/[slug]';
+import styles from '../../blog.module.scss';
 
-interface ContentAreaProps {
-  title: string;
-  author: string;
-  categories: string[];
-  publishedAt: string;
+export interface ContentAreaProps
+  extends Omit<PostStaticProps, '_updatedAt' | 'body'> {
   updatedAt: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export function ContentArea({

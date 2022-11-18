@@ -36,7 +36,7 @@
     }
 
     li:hover {
-      border-right: 3px solid $primary-color;
+      border-right: 3px solid $color-primary;
     }
   }
 }
@@ -64,9 +64,43 @@
 
 .blogParagraph {
   code {
-    background-color: rgb(225, 227, 234);
-    // background-color: $color-background;
-    border-radius: 8px;
-    padding: 3px;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-family: 'Fira Mono', Courier, monospace;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.dark {
+  code {
+    background-color: $color-background-dark;
+    border: 1px solid $color-border-weaker-dark;
+    color: $color-text-dark;
+  }
+
+  a {
+    color: $color-text-link-dark;
+  }
+
+  a:hover {
+    color: $color-text-dark;
+  }
+}
+
+.default {
+  code {
+    background-color: $color-background;
+    border: 1px solid $color-border-weaker;
+  }
+
+  a {
+    color: $color-text-link;
+  }
+
+  a:hover {
+    color: $color-text;
   }
 }
