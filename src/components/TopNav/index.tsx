@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { MenuLink } from './components/MenuLink';
 import { MenuLogo } from './components/MenuLogo';
 import { MobileMenuButton } from './components/MobileMenuButton';
+import { ThemeButton } from './components/ThemeButton';
 import styles from './topNav.module.scss';
 import { words, links } from './words';
 
@@ -39,6 +40,7 @@ export function TopNav(): React.ReactElement {
         </Box>
         <Box>
           <Stack orientation="horizontal" spacing="space60">
+            <ThemeButton />
             <MenuLink href={links.signin} label={words.signin} />
             <Box className={styles.menu_signup_button}>
               <Button variant="primary" onClick={onClickGetStarted}>

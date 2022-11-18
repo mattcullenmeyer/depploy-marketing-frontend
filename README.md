@@ -1,7 +1,9 @@
 ## Sanity
 
 `cd sanity`  
-`sanity start`
+`npm install` (or something else?)  
+`sanity start`  
+`sanity deploy`
 
 Install Sanity.io VS Code extension
 
