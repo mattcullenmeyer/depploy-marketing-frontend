@@ -3,29 +3,9 @@ import imageUrlBuilder from '@sanity/image-url';
 import { PortableText } from '@portabletext/react';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { Heading } from '@twilio-paste/core/heading';
-import {
-  CodeBlock,
-  CodeBlockHeader,
-  CodeBlockWrapper,
-} from '@twilio-paste/core/code-block';
 import { client } from '../../../../../client';
 import { BlogParagraph } from '../BlogParagraph';
-
-// node_modules/@twilio-paste/code-block/dist/CodeBlock.d.ts
-type CodeSnippetLanguages =
-  | 'javascript'
-  | 'jsx'
-  | 'csharp'
-  | 'php'
-  | 'ruby'
-  | 'python'
-  | 'java'
-  | 'json'
-  | 'c'
-  | 'bash'
-  | 'shell'
-  | 'go'
-  | 'groovy';
+import { SanityCodeBlock, SyntaxHighlighter } from '../SyntaxHighlighter';
 
 interface ImageValue {
   _key: string;
@@ -47,17 +27,6 @@ function urlFor(source: SanityImageSource) {
   return imageUrlBuilder(client).image(source).url();
 }
 
-const languages: Record<string, CodeSnippetLanguages> = {
-  golang: 'go',
-};
-
-const getLanguage = (language: string): CodeSnippetLanguages => {
-  if (languages[language]) {
-    return languages[language];
-  }
-  return language as CodeSnippetLanguages;
-};
-
 const portableTextComponents = {
   types: {
     image: ({ value }: { value: ImageValue }) => {
@@ -74,15 +43,9 @@ const portableTextComponents = {
         />
       );
     },
-    code: ({ value }: { value: any }) => {
-      const language = getLanguage(value.language);
-      return (
-        <CodeBlockWrapper>
-          <CodeBlockHeader>{language}</CodeBlockHeader>
-          <CodeBlock showLineNumbers language={language} code={value.code} />
-        </CodeBlockWrapper>
-      );
-    },
+    code: ({ value }: { value: SanityCodeBlock }) => (
+      <SyntaxHighlighter value={value} />
+    ),
   },
   block: {
     normal: ({ children }: any) => <BlogParagraph>{children}</BlogParagraph>,
