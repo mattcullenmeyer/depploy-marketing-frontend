@@ -13,6 +13,14 @@ export interface PostStaticProps {
   body: any[];
   author: string;
   categories: any[];
+  mainImage: {
+    _type: string;
+    alt: string;
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+  };
   publishedAt: string;
   _updatedAt: string;
   // image: any[];
@@ -30,6 +38,7 @@ function Post({ post }: PostProps) {
     categories,
     publishedAt,
     _updatedAt: updatedAt,
+    mainImage,
   } = post;
 
   const headingItems = post.body.filter((item) => item.style === 'h2');
@@ -46,6 +55,7 @@ function Post({ post }: PostProps) {
           categories={categories}
           publishedAt={publishedAt}
           updatedAt={updatedAt}
+          mainImage={mainImage}
           body={body}
         />
 
@@ -61,7 +71,8 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "author": author->name,
   publishedAt,
   _updatedAt,
-  "categories": categories[]->title
+  "categories": categories[]->title,
+  mainImage,
 }`;
 
 export const getStaticPaths: GetStaticPaths = async () => {

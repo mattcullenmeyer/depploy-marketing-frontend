@@ -26,17 +26,8 @@
         transition: color 0.2s ease 0s;
         font-weight: 400;
         text-decoration: none;
-        color: rgb(77, 91, 124);
         line-height: 24px;
       }
-
-      a:hover {
-        color: rgb(0, 12, 43);
-      }
-    }
-
-    li:hover {
-      border-right: 3px solid $color-primary;
     }
   }
 }
@@ -53,10 +44,13 @@
       column-gap: 0.5rem;
 
       a {
-        font-size: 14px;
-        padding: 0.5rem 0.75rem;
-        // text-decoration-line: none;
-        // border: 1px solid transparent;
+        font-size: 13px;
+        padding: 0.3rem 0.5rem;
+        text-decoration-line: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
     }
   }
@@ -88,6 +82,16 @@
   a:hover {
     color: $color-text-dark;
   }
+
+  li {
+    a {
+      color: $color-text-inverse-weak;
+    }
+
+    a:hover {
+      color: $color-text-dark;
+    }
+  }
 }
 
 .default {
@@ -102,5 +106,15 @@
 
   a:hover {
     color: $color-text;
+  }
+
+  li {
+    a {
+      color: $color-text-weak;
+    }
+
+    a:hover {
+      color: $color-text;
+    }
   }
 }

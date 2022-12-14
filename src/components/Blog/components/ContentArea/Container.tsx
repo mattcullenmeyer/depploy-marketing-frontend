@@ -1,11 +1,12 @@
+import React from 'react';
 import { ContentArea, ContentAreaProps } from './index';
-import imageUrlBuilder from '@sanity/image-url';
 import { PortableText } from '@portabletext/react';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { Box } from '@twilio-paste/core/box';
 import { Heading } from '@twilio-paste/core/heading';
-import { client } from '../../../../../client';
 import { BlogParagraph } from '../BlogParagraph';
 import { SanityCodeBlock, SyntaxHighlighter } from '../SyntaxHighlighter';
+import { getSanityImageUrl } from '../../helpers/getSanityImageUrl';
+import { generateHref } from '../../helpers/generateHref';
 
 interface ImageValue {
   _key: string;
@@ -14,17 +15,7 @@ interface ImageValue {
     _ref: string;
     _type: string;
   };
-}
-
-const generateHref = (heading: string) => {
-  const headingArray = heading.split(' ');
-  const lowerCaseHeadingArray = headingArray.map((text) => text.toLowerCase());
-  const result = lowerCaseHeadingArray.join('-');
-  return result;
-};
-
-function urlFor(source: SanityImageSource) {
-  return imageUrlBuilder(client).image(source).url();
+  alt: string;
 }
 
 const portableTextComponents = {
@@ -35,10 +26,10 @@ const portableTextComponents = {
       }
       return (
         <img
-          // alt={value.alt || ' '}
+          alt={value.alt || ' '}
           loading="lazy"
           // src={urlFor(value).width(320).height(240).fit('max').auto('format')}
-          src={urlFor(value)}
+          src={getSanityImageUrl(value)}
           style={{ width: '100%', borderRadius: '24px' }}
         />
       );
@@ -48,11 +39,15 @@ const portableTextComponents = {
     ),
   },
   block: {
-    normal: ({ children }: any) => <BlogParagraph>{children}</BlogParagraph>,
+    normal: ({ children }: { children?: React.ReactNode }) => (
+      <BlogParagraph>{children}</BlogParagraph>
+    ),
     h2: ({ children }: any) => (
-      <Heading id={generateHref(children[0])} as="h2" variant="heading20">
-        {children}
-      </Heading>
+      <Box marginTop="space100">
+        <Heading id={generateHref(children[0])} as="h2" variant="heading20">
+          {children}
+        </Heading>
+      </Box>
     ),
   },
 };
@@ -68,6 +63,7 @@ export function ContentContainer({
   publishedAt,
   updatedAt,
   body,
+  mainImage,
 }: ContentContainerProps) {
   return (
     <ContentArea
@@ -76,6 +72,7 @@ export function ContentContainer({
       categories={categories}
       publishedAt={publishedAt}
       updatedAt={updatedAt}
+      mainImage={mainImage}
     >
       <PortableText value={body} components={portableTextComponents} />
     </ContentArea>

@@ -4,6 +4,6 @@
   @media screen and (min-width: $desktop-min-width) {
     display: grid;
     grid-template-columns: 192px auto 192px;
-    column-gap: 30px;
+    column-gap: 4rem;
   }
 }

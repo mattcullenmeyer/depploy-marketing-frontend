@@ -8,8 +8,14 @@ $color-text-link-dark: rgb(0, 140, 255);
 $color-text: rgb(18, 28, 45);
 $color-text-dark: rgb(244, 244, 246);
 
+$color-text-weak: rgb(96, 107, 133);
+$color-text-inverse-weak: rgb(174, 178, 193);
+
 $color-background: rgb(244, 244, 246);
 $color-background-dark: rgb(18, 28, 45);
+
+$color-border-primary: rgb(2, 99, 224);
+$color-border-primary-strong: rgb(153, 205, 255);
 
 $color-border-weaker: rgb(225, 227, 234);
 $color-border-weaker-dark: rgb(31, 48, 76);
@@ -25,3 +31,6 @@ $small-screen-min-width: 768px;
 $desktop-min-width: 1024px;
 $large-screen-min-width: 1200px;
 $max-width: 1350px;
+
+$small-screen-x-padding: 2.25rem;
+$desktop-layout-x-padding: 2.25rem;

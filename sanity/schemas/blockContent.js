@@ -60,6 +60,7 @@ export default {
     // as a block type.
     {
       type: "image",
+      fields: [{ name: "alt", type: "string", title: "Alt text" }],
       options: { hotspot: true },
     },
     {

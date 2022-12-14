@@ -22,6 +22,9 @@ export function TopNav(): React.ReactElement {
       className={styles.top_nav_container}
       backgroundColor="colorBackgroundBody"
       zIndex="zIndex90"
+      borderBottomWidth="borderWidth10"
+      borderBottomColor="colorBorderWeak"
+      borderBottomStyle="solid"
     >
       <Box
         as="nav"
