@@ -16,8 +16,12 @@
     "src/**/*.(js,jsx,ts,tsx)": "eslint --fix"
   },
   "dependencies": {
-    "@twilio-paste/core": "^14.2.0",
-    "@twilio-paste/icons": "^8.0.2",
+    "@portabletext/react": "^2.0.0",
+    "@sanity/client": "^3.4.1",
+    "@sanity/image-url": "^1.0.1",
+    "@twilio-paste/core": "^17.0.1",
+    "@twilio-paste/icons": "^9.4.0",
+    "eslint-config-next": "^12.3.3",
     "next": "^12.2.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -25,17 +29,18 @@
     "react-icons": "^4.4.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.33",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.33.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.1",
+    "groq": "^2.33.2",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "sass": "^1.54.4",
-    "typescript": "^4.7.4"
+    "typescript": "^4.9.3"
   },
   "resolutions": {
     "@types/react": "^17.0.31"

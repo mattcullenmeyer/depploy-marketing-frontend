@@ -3,7 +3,7 @@ export const links = {
   signup: '#',
   signin: '#',
   products: '#',
-  blog: '#',
+  blog: '/blog',
   pricing: '#',
 };
 

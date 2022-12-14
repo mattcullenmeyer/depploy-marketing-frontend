@@ -1,7 +1,8 @@
 $top-nav-height: 60px;
 
 .top_nav_container {
-  border-bottom: 1px solid rgb(236, 239, 241);
+  position: sticky;
+  top: 0;
 }
 
 .top_nav_layout {
@@ -19,8 +20,8 @@ $top-nav-height: 60px;
 }
 
 .menu_link:hover {
-  border-bottom: 3px solid $primary-color;
-  border-top: 3px solid rgb(255, 255, 255);
+  border-bottom: 2px solid $color-border-primary;
+  border-top: 2px solid transparent;
 }
 
 .menu_nav_button {
@@ -33,13 +34,13 @@ $top-nav-height: 60px;
 }
 
 .mobile_menu_link:hover {
-  color: $primary-color;
+  color: $color-primary;
   text-decoration: underline;
 }
 
-@media screen and (min-width: $tablet-min-width) {
+@media screen and (min-width: $small-screen-min-width) {
   .top_nav_layout {
-    padding: 0 4.75rem;
+    padding: 0 $small-screen-x-padding;
   }
 
   .menu_link {
@@ -58,7 +59,7 @@ $top-nav-height: 60px;
 
 @media screen and (min-width: $desktop-min-width) {
   .top_nav_layout {
-    padding: 0 4.75rem;
+    padding: 0 $desktop-layout-x-padding;
   }
 
   .menu_link {

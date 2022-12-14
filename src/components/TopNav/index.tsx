@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { MenuLink } from './components/MenuLink';
 import { MenuLogo } from './components/MenuLogo';
 import { MobileMenuButton } from './components/MobileMenuButton';
+import { ThemeButton } from './components/ThemeButton';
 import styles from './topNav.module.scss';
 import { words, links } from './words';
 
@@ -16,19 +17,31 @@ export function TopNav(): React.ReactElement {
   };
 
   return (
-    <Box as="header" className={styles.top_nav_container}>
+    <Box
+      as="header"
+      className={styles.top_nav_container}
+      backgroundColor="colorBackgroundBody"
+      zIndex="zIndex90"
+      borderBottomWidth="borderWidth10"
+      borderBottomColor="colorBorderWeak"
+      borderBottomStyle="solid"
+    >
       <Box
+        as="nav"
         display="flex"
         alignItems="center"
         justifyContent="space-between"
         className={styles.top_nav_layout}
       >
-        <MenuLogo />
-        <Box as="nav">
+        <Box style={{ display: 'flex', gap: '25px' }}>
+          <MenuLogo />
+          <MenuLink href={links.products} label={words.products} />
+          <MenuLink href={links.blog} label={words.blog} />
+          <MenuLink href={links.pricing} label={words.pricing} />
+        </Box>
+        <Box style={{ display: 'flex' }}>
           <Stack orientation="horizontal" spacing="space60">
-            <MenuLink href={links.products} label={words.products} />
-            <MenuLink href={links.blog} label={words.blog} />
-            <MenuLink href={links.pricing} label={words.pricing} />
+            <ThemeButton />
             <MenuLink href={links.signin} label={words.signin} />
             <Box className={styles.menu_signup_button}>
               <Button variant="primary" onClick={onClickGetStarted}>
