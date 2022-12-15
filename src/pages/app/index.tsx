@@ -16,6 +16,8 @@ import { Label } from '@twilio-paste/core/label';
 import { Stack } from '@twilio-paste/core/stack';
 import { Text } from '@twilio-paste/core/text';
 import styles from './app.module.scss';
+import Image from 'next/image';
+import colorNoodlesImg from '/images/color-noodles.svg';
 
 const App: NextPage = () => {
   const regions = [
@@ -140,9 +142,10 @@ const App: NextPage = () => {
               </Card>
             </Box>
           </Box>
-          <img
+          <Image
+            alt="Color noodles"
             className={styles.newimg}
-            src="https://www.mozilla.org/media/img/firefox/new/desktop/comparison-noodles-mr1.c18c975efae6.svg"
+            src={colorNoodlesImg}
           />
         </Box>
       </Box>

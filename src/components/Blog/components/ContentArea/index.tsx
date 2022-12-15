@@ -9,6 +9,7 @@ import { Text } from '@twilio-paste/core/text';
 import { PostStaticProps } from '../../../../pages/blog/[slug]';
 import styles from '../../blog.module.scss';
 import { getSanityImageUrl } from '../../helpers/getSanityImageUrl';
+import Image from 'next/image';
 
 export interface ContentAreaProps
   extends Omit<PostStaticProps, '_updatedAt' | 'body'> {
@@ -60,13 +61,16 @@ export function ContentArea({
         </Heading>
       </Box>
 
-      <img
+      {/* https://nextjs.org/docs/api-reference/next/image */}
+      <Image
         alt={mainImage.alt || ' '}
         src={getSanityImageUrl(mainImage.asset._ref)}
         loading="lazy"
-        style={{ width: '100%', borderRadius: '24px' }}
+        style={{ borderRadius: '24px' }}
+        width={750}
+        height={375}
+        loader={({ src }) => src}
       />
-
       {children}
     </Box>
   );
