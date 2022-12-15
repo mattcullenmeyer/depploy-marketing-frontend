@@ -25,6 +25,7 @@ const portableTextComponents = {
         return null;
       }
       return (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           alt={value.alt || ' '}
           loading="lazy"

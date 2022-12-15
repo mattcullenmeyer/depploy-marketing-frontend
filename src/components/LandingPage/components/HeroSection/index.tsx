@@ -32,7 +32,12 @@ export function HeroSection({
       >
         <Heading1 heading={heading1} />
         <Heading2 heading={heading2} />
-        <CtaButton buttonText="Deploy React" onClickButton={() => {}} />
+        <CtaButton
+          buttonText="Deploy React"
+          onClickButton={() => {
+            console.log('clicked');
+          }}
+        />
       </Box>
 
       {children}

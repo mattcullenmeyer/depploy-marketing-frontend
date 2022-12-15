@@ -16,6 +16,10 @@ import styles from '../../../styles/pages/aws/awsReact.module.scss';
 import { words } from '../../../words/pages/aws/react.words';
 
 const AwsReact = () => {
+  const onClickCta = () => {
+    console.log('get started');
+  };
+
   return (
     <Layout>
       <Box display="flex" flexDirection="column" marginBottom="space200">
@@ -52,7 +56,7 @@ const AwsReact = () => {
           summary={words.infrastructureSection.summary}
           buttonText={words.infrastructureSection.buttonText}
           hasBorderTop={true}
-          onClickButton={() => {}}
+          onClickButton={onClickCta}
         >
           <Box
             display="grid"
@@ -73,7 +77,7 @@ const AwsReact = () => {
           title={words.simplicitySection.title}
           summary={words.simplicitySection.summary}
           buttonText={words.simplicitySection.buttonText}
-          onClickButton={() => {}}
+          onClickButton={onClickCta}
           reverse
         >
           <></>
@@ -84,7 +88,7 @@ const AwsReact = () => {
           title={words.freedomSection.title}
           summary={words.freedomSection.summary}
           buttonText={words.freedomSection.buttonText}
-          onClickButton={() => {}}
+          onClickButton={onClickCta}
         >
           <></>
         </FeatureSection>
@@ -94,7 +98,7 @@ const AwsReact = () => {
           title={words.customizationSection.title}
           summary={words.customizationSection.summary}
           buttonText={words.customizationSection.buttonText}
-          onClickButton={() => {}}
+          onClickButton={onClickCta}
           reverse
         >
           <></>

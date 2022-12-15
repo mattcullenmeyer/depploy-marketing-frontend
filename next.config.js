@@ -9,6 +9,14 @@ const sassOptions = {
 const images = {
   loader: "akamai",
   path: "/",
+  remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "cdn.sanity.io",
+      port: "",
+      pathname: "/images/**",
+    },
+  ],
 };
 
 module.exports = (phase, { defaultConfig }) => {
@@ -17,6 +25,7 @@ module.exports = (phase, { defaultConfig }) => {
       ...defaultConfig,
       env: {},
       sassOptions,
+      images,
     };
   }
   return {
