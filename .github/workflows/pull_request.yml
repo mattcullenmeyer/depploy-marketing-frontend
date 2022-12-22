@@ -35,7 +35,7 @@ jobs:
         run: npm run build
 
   terraform-staging:
-    name: Terraform plan - staging
+    name: Terraform plan for staging
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -67,7 +67,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   terraform-production:
-    name: Terraform plan - production
+    name: Terraform plan for production
     runs-on: ubuntu-latest
     defaults:
       run:
