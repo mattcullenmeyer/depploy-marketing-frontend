@@ -1,4 +1,4 @@
-name: Merge with Main Branch Actions
+name: Main branch deploy actions
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-staging:
-    name: Deploy to Staging
+    name: Deploy to staging
     runs-on: ubuntu-latest
     environment: staging
     timeout-minutes: 10
@@ -47,7 +47,7 @@ jobs:
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_ID }} --paths '/*'
 
   deploy-production:
-    name: Deploy to Production
+    name: Deploy to production
     needs: deploy-staging
     runs-on: ubuntu-latest
     environment: production

@@ -1,4 +1,4 @@
-name: Terraform Apply with Main Branch Actions
+name: Main branch terraform actions
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   terraform-staging:
-    name: Terraform Apply - Staging
+    name: Apply terraform to staging
     runs-on: ubuntu-latest
     environment: staging
     defaults:
@@ -37,7 +37,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   terraform-production:
-    name: Terraform Apply - Production
+    name: Apply terraform to production
+    needs: terraform-staging
     runs-on: ubuntu-latest
     environment: production
     defaults:

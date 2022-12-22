@@ -1,4 +1,4 @@
-name: Pull Request Actions
+name: Pull request actions
 
 on:
   pull_request:
@@ -35,7 +35,7 @@ jobs:
         run: npm run build
 
   terraform-staging:
-    name: Terraform Plan Staging
+    name: Terraform plan - staging
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -67,7 +67,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   terraform-production:
-    name: Terraform Plan Production
+    name: Terraform plan - production
     runs-on: ubuntu-latest
     defaults:
       run:
