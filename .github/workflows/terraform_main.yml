@@ -1,42 +1,15 @@
-name: Pull request actions
+name: Main branch terraform actions
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
-    name: Build app
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out source code
-        uses: actions/checkout@v2
-
-      - name: Install node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 18.x
-
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            ${{ github.workspace }}/.next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build app
-        run: npm run build
-
   terraform-staging:
-    name: Terraform plan for staging
+    name: Apply terraform to staging
     runs-on: ubuntu-latest
+    environment: staging
     defaults:
       run:
         working-directory: ./terraform/deploy/staging
@@ -56,19 +29,18 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Terraform Validate
-        run: terraform validate
-
-      - name: Terraform Plan
-        run: terraform plan
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   terraform-production:
-    name: Terraform plan for production
+    name: Apply terraform to production
+    needs: terraform-staging
     runs-on: ubuntu-latest
+    environment: production
     defaults:
       run:
         working-directory: ./terraform/deploy/production
@@ -88,11 +60,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      - name: Terraform Validate
-        run: terraform validate
-
-      - name: Terraform Plan
-        run: terraform plan
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

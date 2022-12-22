@@ -1,5 +1,6 @@
 import React from 'react';
 import type { NextPage } from 'next';
+import { Layout } from '../../components/Layout';
 import { Box } from '@twilio-paste/core/box';
 import { Button } from '@twilio-paste/core/button';
 import { Card } from '@twilio-paste/core/card';
@@ -15,6 +16,8 @@ import { Label } from '@twilio-paste/core/label';
 import { Stack } from '@twilio-paste/core/stack';
 import { Text } from '@twilio-paste/core/text';
 import styles from './app.module.scss';
+import Image from 'next/image';
+import colorNoodlesImg from '/images/color-noodles.svg';
 
 const App: NextPage = () => {
   const regions = [
@@ -61,85 +64,92 @@ const App: NextPage = () => {
   };
 
   return (
-    <Box display="flex" justifyContent="center">
-      <Box width="500px" position="relative">
-        <Box position="absolute" padding="space100" width="100%">
-          <Box className={styles.getit}>
-            <Card>
-              <Box marginBottom="space100">
-                <Heading as="h2" variant="heading20">
-                  Deploy React to AWS
-                </Heading>
-              </Box>
-              <Stack orientation="vertical" spacing="space70">
-                <>
-                  <Label htmlFor="domain" required>
-                    Domain
-                  </Label>
-                  {/* <Label htmlFor="domain">Domain</Label> */}
-                  <Input
-                    aria-describedby="domain_help_text"
-                    id="domain"
-                    name="domain"
-                    type="text"
-                    placeholder="example.com"
-                    insertBefore={
-                      <Text as="span" fontWeight="fontWeightSemibold">
-                        https://
-                      </Text>
-                    }
-                    onChange={() => {}}
-                    required
-                  />
-                </>
-                <RegionCombobox />
-                <Disclosure variant="contained">
-                  <DisclosureHeading as="h3" variant="heading40">
-                    Additional options
-                  </DisclosureHeading>
-                  <DisclosureContent>
-                    <Stack orientation="vertical" spacing="space80">
-                      <>
-                        <Label htmlFor="subdomain">Subdomain</Label>
-                        <Input
-                          aria-describedby="subdomain_help_text"
-                          id="subdomain"
-                          name="subdomain"
-                          type="text"
-                          placeholder="subdomain"
-                          insertAfter={
-                            <Text as="span" fontWeight="fontWeightSemibold">
-                              .example.com
-                            </Text>
-                          }
-                          onChange={() => {}}
-                        />
-                      </>
-                      <Button variant="secondary">Add another</Button>
-                    </Stack>
-                  </DisclosureContent>
-                </Disclosure>
-                <Box
-                  display="flex"
-                  justifyContent="flex-end"
-                  marginTop="space100"
-                >
-                  <Stack orientation="horizontal" spacing="space50">
-                    <Button variant="secondary">Cancel</Button>
-                    <Button variant="primary">Next</Button>
-                    {/* <Button variant="primary">Deploy React</Button> */}
-                  </Stack>
+    <Layout>
+      <Box display="flex" justifyContent="center">
+        <Box width="500px" position="relative">
+          <Box position="absolute" padding="space100" width="100%">
+            <Box className={styles.getit}>
+              <Card>
+                <Box marginBottom="space100">
+                  <Heading as="h2" variant="heading20">
+                    Deploy React to AWS
+                  </Heading>
                 </Box>
-              </Stack>
-            </Card>
+                <Stack orientation="vertical" spacing="space70">
+                  <>
+                    <Label htmlFor="domain" required>
+                      Domain
+                    </Label>
+                    {/* <Label htmlFor="domain">Domain</Label> */}
+                    <Input
+                      aria-describedby="domain_help_text"
+                      id="domain"
+                      name="domain"
+                      type="text"
+                      placeholder="example.com"
+                      insertBefore={
+                        <Text as="span" fontWeight="fontWeightSemibold">
+                          https://
+                        </Text>
+                      }
+                      onChange={() => {
+                        console.log('changed');
+                      }}
+                      required
+                    />
+                  </>
+                  <RegionCombobox />
+                  <Disclosure variant="contained">
+                    <DisclosureHeading as="h3" variant="heading40">
+                      Additional options
+                    </DisclosureHeading>
+                    <DisclosureContent>
+                      <Stack orientation="vertical" spacing="space80">
+                        <>
+                          <Label htmlFor="subdomain">Subdomain</Label>
+                          <Input
+                            aria-describedby="subdomain_help_text"
+                            id="subdomain"
+                            name="subdomain"
+                            type="text"
+                            placeholder="subdomain"
+                            insertAfter={
+                              <Text as="span" fontWeight="fontWeightSemibold">
+                                .example.com
+                              </Text>
+                            }
+                            onChange={() => {
+                              console.log('changed');
+                            }}
+                          />
+                        </>
+                        <Button variant="secondary">Add another</Button>
+                      </Stack>
+                    </DisclosureContent>
+                  </Disclosure>
+                  <Box
+                    display="flex"
+                    justifyContent="flex-end"
+                    marginTop="space100"
+                  >
+                    <Stack orientation="horizontal" spacing="space50">
+                      <Button variant="secondary">Cancel</Button>
+                      <Button variant="primary">Next</Button>
+                      {/* <Button variant="primary">Deploy React</Button> */}
+                    </Stack>
+                  </Box>
+                </Stack>
+              </Card>
+            </Box>
           </Box>
+          <Image
+            alt="Color noodles"
+            className={styles.newimg}
+            src={colorNoodlesImg}
+          />
         </Box>
-        <img
-          className={styles.newimg}
-          src="https://www.mozilla.org/media/img/firefox/new/desktop/comparison-noodles-mr1.c18c975efae6.svg"
-        />
       </Box>
-    </Box>
+    </Layout>
   );
 };
 

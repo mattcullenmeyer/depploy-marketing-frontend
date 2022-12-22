@@ -53,7 +53,7 @@ const query = groq`*[_type == "post"]{
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await client.fetch(query);
-  console.log(posts);
+
   return {
     props: {
       posts,
