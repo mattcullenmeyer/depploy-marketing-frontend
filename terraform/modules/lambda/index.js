@@ -1,11 +1,21 @@
 "use strict";
 
 exports.handler = (event, context, callback) => {
-  const request = event.Records[0].cf.request;
+  const eventRecord = event.Records[0];
+  const request = eventRecord.cf.request;
+  const uri = request.uri;
 
-  if (!request.uri.includes(".")) {
-    request.uri += ".html";
+  // handle /blog/[slug] dynamic route
+  if (uri.startsWith("/blog/")) {
+    request.uri = "/blog/[slug].html";
+    return callback(null, request);
   }
 
+  // if URI includes ".", indicates file extension, return early and don't modify URI
+  if (uri.includes(".")) {
+    return callback(null, request);
+  }
+
+  request.uri += ".html";
   callback(null, request);
 };
