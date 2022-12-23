@@ -26,9 +26,14 @@ export function ContentArea({
   mainImage,
   children,
 }: ContentAreaProps) {
-  const dateParagraph = `Published on ${formatDate(
-    publishedAt
-  )} // Updated on ${formatDate(updatedAt)}`;
+  const publishedDate = formatDate(publishedAt);
+  const updatedDate = formatDate(updatedAt);
+
+  let dateParagraph = `Published on ${publishedDate}`;
+
+  if (publishedDate !== updatedDate) {
+    dateParagraph += ` // Updated on ${updatedDate}`;
+  }
 
   return (
     <Box as="main" className={styles.mainBody}>
