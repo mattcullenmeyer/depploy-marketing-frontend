@@ -5,7 +5,7 @@
   },
   "api": {
     "projectId": "1gqvndqq",
-    "dataset": "production"
+    "dataset": "staging"
   },
   "plugins": [
     "@sanity/base",
@@ -23,6 +23,25 @@
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
+    }
+  ],
+  "__experimental_spaces": [
+    {
+      "name": "production",
+      "title": "Production",
+      "api": {
+        "projectId": "1gqvndqq",
+        "dataset": "production"
+      }
+    },
+    {
+      "name": "staging",
+      "title": "Staging",
+      "default": true,
+      "api": {
+        "projectId": "1gqvndqq",
+        "dataset": "staging"
+      }
     }
   ]
 }
