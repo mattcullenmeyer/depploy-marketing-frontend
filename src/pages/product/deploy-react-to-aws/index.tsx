@@ -1,17 +1,27 @@
 import React from 'react';
 import Image from 'next/image';
-import { Layout } from '../../../components/Layout';
+// Components
 import { Box } from '@twilio-paste/core/box';
+import { Layout } from '../../../components/Layout';
 import { HeroSection } from '../../../components/LandingPage/components/HeroSection';
 import { FeatureSection } from '../../../components/LandingPage/components/FeatureSection';
-import {
-  AwsS3Card,
-  AwsCloudfrontCard,
-  AwsRoute53Card,
-  AwsCertificateManagerCard,
-} from '../../../components/LandingPage/components/ArchitectureCard/AWS';
+import { ImageBlock } from '../../../components/LandingPage/components/ImageBlock';
+// import {
+//   AwsS3Card,
+//   AwsCloudfrontCard,
+//   AwsRoute53Card,
+//   AwsCertificateManagerCard,
+// } from '../../../components/LandingPage/components/ArchitectureCard/AWS';
+// Images
 import deployReactImg from '/images/aws-react.png';
 import backgroundShapesImg from '/images/background-shapes-1.svg';
+import addInformationImg from '/images/add_information.svg';
+import doneCheckingImg from '/images/done_checking.svg';
+import serverStatusImg from '/images/server_status.svg';
+import devFocusImg from '/images/dev_focus.svg';
+import buildingReactImg from '/images/building_react.svg';
+import onlinePaymentsImg from '/images/online_payments_right.svg';
+// Other
 import styles from '../../../styles/pages/aws/awsReact.module.scss';
 import { words } from '../../../words/pages/aws/react.words';
 
@@ -21,10 +31,11 @@ const AwsReact = () => {
   };
 
   return (
-    <Layout>
-      <Box display="flex" flexDirection="column" marginBottom="space200">
+    <Box display="flex" flexDirection="column" marginBottom="space200">
+      <Layout paddingTop={true} backgroundColor="colorBackgroundPrimaryWeakest">
         <HeroSection
-          heading1="Deploy React to AWS the easy way."
+          // heading1="Deploy React to AWS the easy way."
+          heading1="Quickly deploy React apps to AWS without managing infrastructure"
           heading2="Get your React app into production on AWS in minutes with Depploy."
         >
           <Box flexGrow={1} display="flex" justifyContent="center">
@@ -49,16 +60,19 @@ const AwsReact = () => {
             </Box>
           </Box>
         </HeroSection>
+      </Layout>
 
-        <FeatureSection
-          name={words.infrastructureSection.name}
-          title={words.infrastructureSection.title}
-          summary={words.infrastructureSection.summary}
-          buttonText={words.infrastructureSection.buttonText}
-          hasBorderTop={true}
-          onClickButton={onClickCta}
-        >
-          <Box
+      <Layout paddingTop={false}>
+        <>
+          <FeatureSection
+            name={words.infrastructureSection.name}
+            title={words.infrastructureSection.title}
+            summary={words.infrastructureSection.summary}
+            buttonText={words.infrastructureSection.buttonText}
+            // hasBorderTop={true}
+            onClickButton={onClickCta}
+          >
+            {/* <Box
             display="grid"
             columnGap="space50"
             rowGap="space50"
@@ -69,42 +83,87 @@ const AwsReact = () => {
             <AwsCloudfrontCard />
             <AwsRoute53Card />
             <AwsCertificateManagerCard />
-          </Box>
-        </FeatureSection>
+          </Box> */}
+            <ImageBlock
+              src={buildingReactImg}
+              alt={'People building a React website on AWS'}
+            />
+          </FeatureSection>
 
-        <FeatureSection
-          name={words.simplicitySection.name}
-          title={words.simplicitySection.title}
-          summary={words.simplicitySection.summary}
-          buttonText={words.simplicitySection.buttonText}
-          onClickButton={onClickCta}
-          reverse
-        >
-          <></>
-        </FeatureSection>
+          <FeatureSection
+            name={words.simplicitySection.name}
+            title={words.simplicitySection.title}
+            summary={words.simplicitySection.summary}
+            buttonText={words.simplicitySection.buttonText}
+            onClickButton={onClickCta}
+            reverse
+          >
+            <ImageBlock
+              src={devFocusImg}
+              alt={
+                'A software developer sitting at a laptop computer, focusing on work'
+              }
+            />
+          </FeatureSection>
 
-        <FeatureSection
-          name={words.freedomSection.name}
-          title={words.freedomSection.title}
-          summary={words.freedomSection.summary}
-          buttonText={words.freedomSection.buttonText}
-          onClickButton={onClickCta}
-        >
-          <></>
-        </FeatureSection>
+          <FeatureSection
+            name={words.flexibilitySection.name}
+            title={words.flexibilitySection.title}
+            summary={words.flexibilitySection.summary}
+            buttonText={words.flexibilitySection.buttonText}
+            onClickButton={onClickCta}
+          >
+            <ImageBlock
+              src={serverStatusImg}
+              alt={'A person checking on the status of a web server'}
+            />
+          </FeatureSection>
 
-        <FeatureSection
-          name={words.customizationSection.name}
-          title={words.customizationSection.title}
-          summary={words.customizationSection.summary}
-          buttonText={words.customizationSection.buttonText}
-          onClickButton={onClickCta}
-          reverse
-        >
-          <></>
-        </FeatureSection>
-      </Box>
-    </Layout>
+          <FeatureSection
+            name={words.customizationSection.name}
+            title={words.customizationSection.title}
+            summary={words.customizationSection.summary}
+            buttonText={words.customizationSection.buttonText}
+            onClickButton={onClickCta}
+            reverse
+          >
+            <ImageBlock
+              src={addInformationImg}
+              alt={'A person adding boxes of information to a blank screen'}
+            />
+          </FeatureSection>
+
+          <FeatureSection
+            name={words.savingsSection.name}
+            title={words.savingsSection.title}
+            summary={words.savingsSection.summary}
+            buttonText={words.savingsSection.buttonText}
+            onClickButton={onClickCta}
+          >
+            <ImageBlock
+              src={onlinePaymentsImg}
+              alt={
+                'Someone holding an oversized credit card in front of a list of checkmarks'
+              }
+            />
+          </FeatureSection>
+
+          <FeatureSection
+            name={words.centralizationSection.name}
+            title={words.centralizationSection.title}
+            summary={words.centralizationSection.summary}
+            buttonText={words.centralizationSection.buttonText}
+            onClickButton={onClickCta}
+            reverse
+          >
+            <ImageBlock
+              src={doneCheckingImg}
+              alt={'A person staring at floating to-do lists with checkmarks'}
+            />
+          </FeatureSection>
+        </>
+      </Layout>
+    </Box>
   );
 };
 

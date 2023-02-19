@@ -1,31 +1,50 @@
 export const words = {
   infrastructureSection: {
-    name: 'ARCHITECTURE',
-    title: 'Best in class cloud architecture',
-    summary: `Deploying React to AWS is time consuming and error prone. Let us
-      provision it for you with the same AWS
-      architecture trusted by leading tech companies.`,
+    name: 'AUTOMATION',
+    title: 'Fully managed AWS solution',
+    summary: `Automatically provision AWS infrastructure for your React app in minutes. 
+      Get fast and secure hosting, global CDN caching, DNS routing, SSL/TLS provisioning, and more.`,
     buttonText: 'Deploy React',
   },
   simplicitySection: {
     name: 'SIMPLICITY',
-    title: 'Focus on development, not infrastructure',
-    summary: `Deploy your React app to AWS in just a few quick steps. 
-            Get enterprise-grade security, scalability, and performance out of the box.`,
+    title: 'Build and deploy React quickly',
+    summary: `Quickly launch your React app into production without the complexity of managing the underlying infrastructure yourself. 
+      No DevOps or cloud experience required.`,
     buttonText: 'Deploy React',
   },
-  freedomSection: {
-    name: 'FREEDOM',
-    title: 'Stay in control of your infrastructure and costs',
-    summary: `Enjoy the features and savings of a large cloud platform that you'll never outgrow. 
-      Maintain direct access to your resources without needing to maintain them.`,
+  flexibilitySection: {
+    name: 'FLEXIBILITY',
+    title: 'Future-proof your infrastructure',
+    summary: `Enjoy the features and flexibility of a large cloud platform that you'll never outgrow. 
+      Maintain full control of your AWS resources without needing to maintain them.`,
+    buttonText: 'Deploy React',
+  },
+  savingsSection: {
+    name: 'SAVINGS',
+    title: 'Minimize your costs and surprise billings',
+    summary: `AWS services can be cost effective with proper planning. 
+      Depploy provides cost optimized deployments without you needing to scrutinize every step.`,
     buttonText: 'Deploy React',
   },
   customizationSection: {
     name: 'CUSTOMIZATION',
-    title: 'Simple customization for complex needs',
-    summary: `Your infrastructure should evolve with your React app. 
-      Customize your cloud architecture anytime with ease from a single dashboard.`,
+    title: 'Simple tools for complex configs',
+    summary: `Your AWS infrastructure should evolve with your React app. 
+      Customize your cloud architecture anytime with easy-to-change deployment templates.`,
     buttonText: 'Deploy React',
+  },
+  centralizationSection: {
+    name: 'CENTRALIZATION',
+    title: 'Review your infrastructure from a simple UI',
+    summary: `Automate the orchestration of AWS resources without logging into the AWS console. 
+      Depploy offers a super intuitive user interface to easily manage the many AWS products that power your React app, 
+      all from one centralized dashboard.`,
+    buttonText: 'Deploy React',
+  },
+  freedomSection: {
+    name: 'FREEDOM',
+    title: 'Focus on development, not deployments',
+    summary: '',
   },
 };
