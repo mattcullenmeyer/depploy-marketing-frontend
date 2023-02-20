@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "dev:staging": "ENVIRONMENT=staging next dev",
+    "build": "ENVIRONMENT=production next build && next export",
+    "build:staging": "ENVIRONMENT=staging next build && next export",
     "start": "next start",
     "lint": "lint-staged",
     "tsc": "tsc --noEmit",
@@ -21,6 +23,7 @@
     "@sanity/image-url": "^1.0.1",
     "@twilio-paste/core": "^17.0.1",
     "@twilio-paste/icons": "^9.4.0",
+    "dotenv": "^16.0.3",
     "eslint-config-next": "^12.3.3",
     "next": "^12.2.2",
     "prop-types": "^15.7.2",

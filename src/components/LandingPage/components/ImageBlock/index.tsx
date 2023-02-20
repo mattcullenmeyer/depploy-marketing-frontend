@@ -4,13 +4,20 @@ import { Box } from '@twilio-paste/core/box';
 interface ImageBlockProps {
   src: string;
   alt: string;
+  width?: string;
+  priority?: boolean;
 }
 
-export function ImageBlock({ src, alt }: ImageBlockProps) {
+export function ImageBlock({
+  src,
+  alt,
+  width = '400px',
+  priority = false,
+}: ImageBlockProps) {
   return (
     <Box display="flex" justifyContent="center">
-      <Box width="450px">
-        <Image src={src} layout="responsive" alt={alt} />
+      <Box width={width}>
+        <Image src={src} layout="responsive" alt={alt} priority={priority} />
       </Box>
     </Box>
   );

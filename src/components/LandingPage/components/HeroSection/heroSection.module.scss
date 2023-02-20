@@ -2,7 +2,7 @@
   flex-direction: column;
 
   .textColumn {
-    // width: 100%;
+    width: 100%;
     align-items: center;
 
     h1,
@@ -11,9 +11,9 @@
     }
   }
 
-  // .imageColumn {
-  //   width: 100%;
-  // }
+  .imageColumn {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: $desktop-min-width) {
@@ -21,7 +21,7 @@
     flex-direction: row;
 
     .textColumn {
-      // width: 50%;
+      width: 50%;
       align-items: flex-start;
 
       h1,
@@ -30,8 +30,8 @@
       }
     }
 
-    // .imageColumn {
-    //   width: 50%;
-    // }
+    .imageColumn {
+      width: 50%;
+    }
   }
 }

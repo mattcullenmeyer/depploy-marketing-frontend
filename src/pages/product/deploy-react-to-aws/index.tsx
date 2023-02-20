@@ -1,28 +1,18 @@
 import React from 'react';
-import Image from 'next/image';
 // Components
 import { Box } from '@twilio-paste/core/box';
 import { Layout } from '../../../components/Layout';
 import { HeroSection } from '../../../components/LandingPage/components/HeroSection';
 import { FeatureSection } from '../../../components/LandingPage/components/FeatureSection';
 import { ImageBlock } from '../../../components/LandingPage/components/ImageBlock';
-// import {
-//   AwsS3Card,
-//   AwsCloudfrontCard,
-//   AwsRoute53Card,
-//   AwsCertificateManagerCard,
-// } from '../../../components/LandingPage/components/ArchitectureCard/AWS';
-// Images
-import deployReactImg from '/images/aws-react.png';
-import backgroundShapesImg from '/images/background-shapes-1.svg';
 import addInformationImg from '/images/add_information.svg';
 import doneCheckingImg from '/images/done_checking.svg';
 import serverStatusImg from '/images/server_status.svg';
 import devFocusImg from '/images/dev_focus.svg';
 import buildingReactImg from '/images/building_react.svg';
 import onlinePaymentsImg from '/images/online_payments_right.svg';
+import fittingPieceImg from '/images/fitting_piece.svg';
 // Other
-import styles from '../../../styles/pages/aws/awsReact.module.scss';
 import { words } from '../../../words/pages/aws/react.words';
 
 const AwsReact = () => {
@@ -34,31 +24,15 @@ const AwsReact = () => {
     <Box display="flex" flexDirection="column" marginBottom="space200">
       <Layout paddingTop={true} backgroundColor="colorBackgroundPrimaryWeakest">
         <HeroSection
-          // heading1="Deploy React to AWS the easy way."
-          heading1="Quickly deploy React apps to AWS without managing infrastructure"
-          heading2="Get your React app into production on AWS in minutes with Depploy."
+          heading1={words.heroSection.h1}
+          heading2={words.heroSection.h2}
         >
-          <Box flexGrow={1} display="flex" justifyContent="center">
-            <Box width="500px" position="relative">
-              <Box
-                width="100%"
-                position="absolute"
-                padding="space150"
-                zIndex="zIndex10"
-              >
-                <Box className={styles.deployReactImage}>
-                  <Image src={deployReactImg} alt="Deploy React to AWS" />
-                </Box>
-              </Box>
-              <Box zIndex="zIndex0">
-                <Image
-                  src={backgroundShapesImg}
-                  layout="responsive"
-                  alt="Deploy React to AWS Background"
-                />
-              </Box>
-            </Box>
-          </Box>
+          <ImageBlock
+            src={buildingReactImg}
+            alt={words.heroSection.imageAlt}
+            width="500px"
+            priority
+          />
         </HeroSection>
       </Layout>
 
@@ -69,24 +43,12 @@ const AwsReact = () => {
             title={words.infrastructureSection.title}
             summary={words.infrastructureSection.summary}
             buttonText={words.infrastructureSection.buttonText}
-            // hasBorderTop={true}
             onClickButton={onClickCta}
           >
-            {/* <Box
-            display="grid"
-            columnGap="space50"
-            rowGap="space50"
-            justifyContent="center"
-            className={styles.architectureCardGrid}
-          >
-            <AwsS3Card />
-            <AwsCloudfrontCard />
-            <AwsRoute53Card />
-            <AwsCertificateManagerCard />
-          </Box> */}
             <ImageBlock
-              src={buildingReactImg}
-              alt={'People building a React website on AWS'}
+              src={fittingPieceImg}
+              alt={words.infrastructureSection.imageAlt}
+              width="350px"
             />
           </FeatureSection>
 
@@ -100,9 +62,7 @@ const AwsReact = () => {
           >
             <ImageBlock
               src={devFocusImg}
-              alt={
-                'A software developer sitting at a laptop computer, focusing on work'
-              }
+              alt={words.simplicitySection.imageAlt}
             />
           </FeatureSection>
 
@@ -115,7 +75,7 @@ const AwsReact = () => {
           >
             <ImageBlock
               src={serverStatusImg}
-              alt={'A person checking on the status of a web server'}
+              alt={words.flexibilitySection.imageAlt}
             />
           </FeatureSection>
 
@@ -129,7 +89,7 @@ const AwsReact = () => {
           >
             <ImageBlock
               src={addInformationImg}
-              alt={'A person adding boxes of information to a blank screen'}
+              alt={words.customizationSection.imageAlt}
             />
           </FeatureSection>
 
@@ -142,9 +102,7 @@ const AwsReact = () => {
           >
             <ImageBlock
               src={onlinePaymentsImg}
-              alt={
-                'Someone holding an oversized credit card in front of a list of checkmarks'
-              }
+              alt={words.savingsSection.imageAlt}
             />
           </FeatureSection>
 
@@ -158,7 +116,7 @@ const AwsReact = () => {
           >
             <ImageBlock
               src={doneCheckingImg}
-              alt={'A person staring at floating to-do lists with checkmarks'}
+              alt={words.centralizationSection.imageAlt}
             />
           </FeatureSection>
         </>
