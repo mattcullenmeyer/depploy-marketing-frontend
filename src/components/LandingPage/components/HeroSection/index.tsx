@@ -1,26 +1,28 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { Box } from '@twilio-paste/core/box';
+// import { Text } from '@twilio-paste/core/text';
 import { CtaButton } from '../CtaButton';
 import { Heading1 } from '../Heading1';
 import { Heading2 } from '../Heading2';
 import styles from './heroSection.module.scss';
-import { Text } from '@twilio-paste/core';
-import { env } from '../../../../constants/env';
 
 interface HeroSectionProps {
   heading1: string | React.ReactElement;
   heading2: string;
+  buttonText: string;
+  buttonUrl: string;
   children: React.ReactElement;
 }
 
 export function HeroSection({
   heading1,
   heading2,
+  buttonText,
+  buttonUrl,
   children,
 }: HeroSectionProps) {
   const router = useRouter();
-  const url = `${env.CONSOLE_ENDPOINT}/signup`;
 
   return (
     <Box
@@ -39,14 +41,15 @@ export function HeroSection({
         <Heading1 heading={heading1} />
         <Heading2 heading={heading2} />
         <CtaButton
-          buttonText="Get started free"
+          buttonText={buttonText}
           onClickButton={() => {
-            router.push(url);
+            router.push(buttonUrl);
           }}
         />
-        <Text as="p" marginTop="space50">
+        {/* TODO: Add this marketing copy as an optional prop */}
+        {/* <Text as="p" marginTop="space50">
           Deploy your first app free. Upgrade anytime.
-        </Text>
+        </Text> */}
       </Box>
       <Box className={styles.imageColumn}>{children}</Box>
     </Box>

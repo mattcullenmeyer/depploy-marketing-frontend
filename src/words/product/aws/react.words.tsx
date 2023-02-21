@@ -3,7 +3,6 @@ import globalStyles from '../../../styles/variables.module.scss';
 
 export const words = {
   heroSection: {
-    // h1: 'Deploy your React app to AWS in minutes without managing the infrastructure',
     h1: (
       <>
         {'Build and deploy your'}
@@ -14,6 +13,7 @@ export const words = {
       </>
     ),
     h2: '...without managing the infrastructure.',
+    button: 'Get started free',
     imageAlt: 'People building a React app static website on AWS',
   },
   infrastructureSection: {

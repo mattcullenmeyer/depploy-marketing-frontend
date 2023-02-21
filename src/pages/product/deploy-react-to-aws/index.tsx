@@ -5,6 +5,7 @@ import { Layout } from '../../../components/Layout';
 import { HeroSection } from '../../../components/LandingPage/components/HeroSection';
 import { FeatureSection } from '../../../components/LandingPage/components/FeatureSection';
 import { ImageBlock } from '../../../components/LandingPage/components/ImageBlock';
+// Images
 import addInformationImg from '/images/add_information.svg';
 import doneCheckingImg from '/images/done_checking.svg';
 import serverStatusImg from '/images/server_status.svg';
@@ -13,9 +14,11 @@ import buildingReactImg from '/images/building_react.svg';
 import onlinePaymentsImg from '/images/online_payments_right.svg';
 import fittingPieceImg from '/images/fitting_piece.svg';
 // Other
-import { words } from '../../../words/pages/aws/react.words';
+import { words } from '../../../words/product/aws/react.words';
+import { env } from '../../../constants/env';
 
 const AwsReact = () => {
+  const heroSectionUrl = `${env.CONSOLE_ENDPOINT}/signup`;
   const onClickCta = () => {
     console.log('get started');
   };
@@ -26,6 +29,8 @@ const AwsReact = () => {
         <HeroSection
           heading1={words.heroSection.h1}
           heading2={words.heroSection.h2}
+          buttonText={words.heroSection.button}
+          buttonUrl={heroSectionUrl}
         >
           <ImageBlock
             src={buildingReactImg}
