@@ -8,7 +8,7 @@ export const links = {
 };
 
 export const words = {
-  getStarted: 'Get started',
+  getStarted: 'Get started free',
   signup: 'Sign up',
   signin: 'Sign in',
   products: 'Products',

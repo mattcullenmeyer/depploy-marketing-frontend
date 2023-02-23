@@ -21,11 +21,15 @@ export function ThemeButton() {
       {isDarkMode ? (
         <LightModeIcon
           decorative={false}
-          title="Light mode"
-          size="sizeIcon40"
+          title="Switch to light mode"
+          size="sizeIcon60"
         />
       ) : (
-        <DarkModeIcon decorative={false} title="Dark mode" size="sizeIcon40" />
+        <DarkModeIcon
+          decorative={false}
+          title="Switch to dark mode"
+          size="sizeIcon60"
+        />
       )}
     </Box>
   );

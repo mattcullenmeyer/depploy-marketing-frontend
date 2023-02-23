@@ -11,3 +11,5 @@ Authenticate through basic auth
 Install Sanity.io VS Code extension
 
 `npm outdated`
+
+Illustrations come from https://undraw.co/illustrations

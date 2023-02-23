@@ -50,7 +50,7 @@ export function FeatureSection({
             fontSize: '16px',
             letterSpacing: '1px',
           }}
-          marginBottom="space30"
+          marginBottom="space50"
           fontWeight="fontWeightBold"
         >
           {name}

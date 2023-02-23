@@ -1,4 +1,8 @@
 const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+const environment = process.env.ENVIRONMENT || "development";
+require("dotenv").config({
+  path: `config/env/.env.${environment}`,
+});
 
 // https://stackoverflow.com/questions/60951575/next-js-using-sass-variables-from-global-scss
 const sassOptions = {
