@@ -1,0 +1,27 @@
+.sideBySideContainer {
+  flex-direction: column;
+
+  .sideColumnContainer {
+    width: 100%;
+    flex-direction: column-reverse;
+
+    .sideColumnImageBlock {
+      padding-top: 32px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-min-width) {
+  .sideBySideContainer {
+    flex-direction: row;
+
+    .sideColumnContainer {
+      width: 50%;
+      flex-direction: column;
+
+      .sideColumnImageBlock {
+        padding-top: 0;
+      }
+    }
+  }
+}

@@ -1,19 +1,19 @@
 import { Box } from '@twilio-paste/core/box';
 import { Text } from '@twilio-paste/core/text';
 
-interface Heading2Props {
+interface Heading3Props {
   heading: React.ReactNode;
-  maxWidth: string;
+  maxWidth?: string;
 }
 
-export function Heading2({ heading, maxWidth }: Heading2Props) {
+export function Heading3({ heading, maxWidth = '700px' }: Heading3Props) {
   return (
     <Box marginBottom="space50" maxWidth={maxWidth}>
       <Text
-        as="h2"
-        fontSize="fontSize100"
+        as="h3"
+        fontSize="fontSize80"
         fontWeight="fontWeightBold"
-        lineHeight="lineHeight100"
+        lineHeight="lineHeight80"
       >
         {heading}
       </Text>

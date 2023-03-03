@@ -13,3 +13,19 @@ Install Sanity.io VS Code extension
 `npm outdated`
 
 Illustrations come from https://undraw.co/illustrations
+
+## Spacing and layout
+
+https://paste.twilio.design/foundations/spacing-and-layout
+
+Use an 8-pixel UI grid
+
+| Spacing  | Pixels | Use case                                                       |
+| -------- | ------ | -------------------------------------------------------------- |
+| space30  | 8      |                                                                |
+| space50  | 16     | margin below subheadings                                       |
+| space70  | 24     | margin between paragraphs                                      |
+| space90  | 32     | margin below headings, padding around box, margin above button |
+| space130 | 48     |                                                                |
+| space170 | 64     | top margin of page                                             |
+| space190 | 72     | margin between columns                                         |
