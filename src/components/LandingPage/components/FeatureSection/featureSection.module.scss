@@ -10,10 +10,6 @@
   }
 }
 
-.reverse {
-  flex-direction: column-reverse;
-}
-
 @media screen and (min-width: $desktop-min-width) {
   .featureSectionContainer {
     flex-direction: row;

@@ -1,23 +1,26 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { Box } from '@twilio-paste/core/box';
-// import { Text } from '@twilio-paste/core/text';
 import { CtaButton } from '../CtaButton';
 import { Heading1 } from '../Heading1';
-import { Heading2 } from '../Heading2';
+import { Paragraph } from '../Paragraph';
 import styles from './heroSection.module.scss';
 
 interface HeroSectionProps {
-  heading1: string | React.ReactElement;
-  heading2: string;
+  heading: string | React.ReactElement;
+  subheading: string;
+  headingMaxWidth?: string;
+  subheadingMaxWidth?: string;
   buttonText: string;
   buttonUrl: string;
   children: React.ReactElement;
 }
 
 export function HeroSection({
-  heading1,
-  heading2,
+  heading,
+  headingMaxWidth = '640px',
+  subheading,
+  subheadingMaxWidth = '640px',
   buttonText,
   buttonUrl,
   children,
@@ -28,18 +31,15 @@ export function HeroSection({
     <Box
       as="section"
       display="flex"
-      justifyContent="space-between"
-      marginBottom="space200"
+      alignItems="center"
+      rowGap="space190"
+      columnGap="space190"
+      marginBottom="space190"
       className={styles.heroSectionContainer}
     >
-      <Box
-        display="flex"
-        flexDirection="column"
-        marginBottom="space200"
-        className={styles.textColumn}
-      >
-        <Heading1 heading={heading1} />
-        <Heading2 heading={heading2} />
+      <Box className={styles.textColumn}>
+        <Heading1 heading={heading} maxWidth={headingMaxWidth} />
+        <Paragraph text={subheading} maxWidth={subheadingMaxWidth} />
         <CtaButton
           buttonText={buttonText}
           onClickButton={() => {

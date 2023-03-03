@@ -1,28 +1,55 @@
 import React from 'react';
+import { GridCardProps } from '../../../components/LandingPage/components/CardRow';
+import { SquiggleText } from '../../../components/LandingPage/components/SquiggleText';
 import globalStyles from '../../../styles/variables.module.scss';
 
 export const words = {
   heroSection: {
-    h1: (
+    heading: (
       <>
-        {'Build and deploy your'}
+        {'The easy way to deploy your'}
         <span style={{ color: globalStyles.secondaryColor }}>
           {' React app '}
         </span>
-        {'to AWS in minutes...'}
+        {'to AWS'}
       </>
     ),
-    h2: '...without managing the infrastructure.',
+    // h2: `Provision AWS infrastructure for your React app in minutes without logging into the AWS console.
+    //   Get fast and secure hosting, global CDN caching, TLS provisioning, and more.`,
+    subheading: `Easily provision and update your cloud infrastructure on AWS without logging into the AWS console. 
+      Get fast and secure hosting, global CDN caching, TLS provisioning, and more out-of-the-box for your React app.`,
     button: 'Get started free',
     imageAlt: 'People building a React app static website on AWS',
   },
   infrastructureSection: {
-    name: 'AUTOMATION',
-    title: 'Fully managed AWS solution',
-    summary: `Automatically provision AWS infrastructure for your React app in minutes. 
-      Get fast and secure hosting, global CDN caching, DNS routing, SSL/TLS provisioning, and more.`,
-    imageAlt: 'Person putting shapes on a web page',
-    buttonText: 'Deploy React',
+    heading: (
+      <>
+        React to{' '}
+        <SquiggleText text="production" imageAlt="Squiggly underline" /> in
+        minutes
+      </>
+    ),
+    subheading: 'Build, deploy, and scale your React app on AWS with Depploy',
+    gridCards: (): GridCardProps[] => [
+      {
+        heading: 'Fully managed AWS solution',
+        paragraph: `
+          Quickly launch your React app into production with zero configuration required. 
+          Depploy automatically handles all the AWS deployment details so you can focus on app development.`,
+      },
+      {
+        heading: 'Blazing fast, global CDN',
+        paragraph: `
+          Make your React site as lightening fast as possible. 
+          Automatically compress and cache static assets to edge locations around the world with AWS Cloudfront.`,
+      },
+      {
+        heading: 'TLS certificate renewal',
+        paragraph: `
+          Easily encrypt and secure your network communications with SSL/TLS certificates. 
+          Certificates are provisioned and renewed automatically by AWS Certificate Manager.`,
+      },
+    ],
   },
   simplicitySection: {
     name: 'SIMPLICITY',
@@ -69,7 +96,34 @@ export const words = {
   },
   freedomSection: {
     name: 'FREEDOM',
-    title: 'Focus on development, not deployments',
-    summary: '',
+    title: 'Focus on development, not deployment',
+    summary:
+      'Depploy makes it incredibly easy to deploy React applications to AWS, freeing up more developer time for writing code and shipping features.',
+  },
+  integrationSection: {
+    heading: (
+      <>
+        Automatic and{' '}
+        <SquiggleText text="continuous" imageAlt="Squiggly underline" /> deploys
+      </>
+    ),
+  },
+  continuousDeploySection: {
+    leftSide: {
+      imgAlt:
+        'Software developer working on a laptop with connected dots floating behind them',
+      heading: 'Easily integrate with GitHub',
+      text: `
+        Build and deploy your React app continuously with GitHub integrations. 
+        Automatically trigger a deployment workflow every time you push changes to your GitHub repository.`,
+    },
+    rightSide: {
+      imgAlt:
+        'Two people standing to the side of a website screen, moving pieces around on the screen',
+      heading: 'Shareable deployment previews',
+      text: `
+        Confidently deploy to production by previewing changes in advance. 
+        Every pull request automatically deploys a new version of your site with its own URL to preview before going live.`,
+    },
   },
 };
