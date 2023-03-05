@@ -6,18 +6,22 @@ import { HeroSection } from '../../../components/LandingPage/components/HeroSect
 import { FeatureSection } from '../../../components/LandingPage/components/FeatureSection';
 import { ImageBlock } from '../../../components/LandingPage/components/ImageBlock';
 import { SectionHeading } from '../../../components/LandingPage/components/SectionHeading';
-// import { CardRow } from '../../../components/LandingPage/components/CardRow';
 import { SideBySide } from '../../../components/LandingPage/components/SideBySide';
 import { ContentSeparatedSection } from '../../../components/LandingPage/components/ContentSeparatedSection';
+import { GridWithIcons } from '../../../components/LandingPage/components/GridWithIcons';
 // Images
 import addInformationImg from '/images/add_information.svg';
-// import doneCheckingImg from '/images/done_checking.svg';
 import serverStatusImg from '/images/server_status.svg';
 import devFocusImg from '/images/dev_focus.svg';
 import buildingReactImg from '/images/building_react.svg';
-// import onlinePaymentsImg from '/images/online_payments_right.svg';
 import usabilityTestingImg from '/images/usability_testing.svg';
 import versionControlImg from '/images/version_control.svg';
+import { TbCloudLockOpen } from 'react-icons/tb';
+import { RiUserHeartLine } from 'react-icons/ri';
+import { RiCodeSSlashLine } from 'react-icons/ri';
+import { MdCreditScore } from 'react-icons/md';
+import { TbEdit } from 'react-icons/tb';
+import { VscClippy } from 'react-icons/vsc';
 // Other
 import { words } from '../../../words/product/aws/react.words';
 import { env } from '../../../constants/env';
@@ -153,6 +157,50 @@ const AwsReact = () => {
               heading: words.continuousDeploySection.rightSide.heading,
               text: words.continuousDeploySection.rightSide.text,
             }}
+          />
+        </>
+      </Layout>
+
+      <Layout paddingTop={false}>
+        <>
+          <SectionHeading
+            heading={words.whyUseDepploySection.heading}
+            subheading={words.whyUseDepploySection.subheading}
+          />
+
+          <GridWithIcons
+            gridItems={[
+              {
+                icon: <RiCodeSSlashLine />,
+                heading: words.whyUseDepploySection.reason1.heading,
+                subheading: words.whyUseDepploySection.reason1.subheading,
+              },
+              {
+                icon: <TbCloudLockOpen />,
+                heading: words.whyUseDepploySection.reason2.heading,
+                subheading: words.whyUseDepploySection.reason2.subheading,
+              },
+              {
+                icon: <RiUserHeartLine />,
+                heading: words.whyUseDepploySection.reason3.heading,
+                subheading: words.whyUseDepploySection.reason3.subheading,
+              },
+              {
+                icon: <MdCreditScore />,
+                heading: words.whyUseDepploySection.reason4.heading,
+                subheading: words.whyUseDepploySection.reason4.subheading,
+              },
+              {
+                icon: <TbEdit />,
+                heading: words.whyUseDepploySection.reason5.heading,
+                subheading: words.whyUseDepploySection.reason5.subheading,
+              },
+              {
+                icon: <VscClippy />,
+                heading: words.whyUseDepploySection.reason6.heading,
+                subheading: words.whyUseDepploySection.reason6.subheading,
+              },
+            ]}
           />
         </>
       </Layout>

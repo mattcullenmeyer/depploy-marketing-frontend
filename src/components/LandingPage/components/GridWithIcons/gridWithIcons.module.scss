@@ -1,0 +1,11 @@
+.gridContainer {
+  grid-template-columns: repeat(1, 1fr);
+
+  @media screen and (min-width: $small-screen-min-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $desktop-min-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

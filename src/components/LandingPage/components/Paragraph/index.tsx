@@ -13,7 +13,7 @@ export function Paragraph({ text, maxWidth = '600px' }: ParagraphProps) {
         as="p"
         fontSize="fontSize50"
         fontWeight="fontWeightNormal"
-        lineHeight="lineHeight60"
+        lineHeight="lineHeight50"
       >
         {text}
       </Text>

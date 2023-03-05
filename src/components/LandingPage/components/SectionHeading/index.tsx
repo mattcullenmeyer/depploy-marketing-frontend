@@ -20,7 +20,11 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       paddingTop="space190"
     >
       <Heading2 heading={heading} maxWidth="1200px" />
-      {subheading && <Paragraph text={subheading} />}
+      {subheading && (
+        <Box textAlign="center">
+          <Paragraph text={subheading} maxWidth="700px" />
+        </Box>
+      )}
     </Box>
   );
 };

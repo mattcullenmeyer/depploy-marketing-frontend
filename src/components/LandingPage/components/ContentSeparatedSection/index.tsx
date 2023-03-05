@@ -2,6 +2,7 @@ import { Box } from '@twilio-paste/core/box';
 import { Heading } from '@twilio-paste/core/heading';
 import { Separator } from '@twilio-paste/core/separator';
 import { Text } from '@twilio-paste/core/text';
+import { ParagraphSmall } from '../ParagraphSmall';
 import styles from './contentSeparatedSection.module.scss';
 
 export interface ContentBlock {
@@ -62,9 +63,7 @@ function ContentSeparatedRow({
               <Heading as="h4" variant="heading30">
                 {block.heading}
               </Heading>
-              <Text as="p" fontSize="fontSize40" lineHeight="lineHeight40">
-                {block.paragraph}
-              </Text>
+              <ParagraphSmall text={block.paragraph} />
             </Box>
           );
         }
