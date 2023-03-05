@@ -9,6 +9,13 @@ import { SectionHeading } from '../../../components/LandingPage/components/Secti
 import { SideBySide } from '../../../components/LandingPage/components/SideBySide';
 import { ContentSeparatedSection } from '../../../components/LandingPage/components/ContentSeparatedSection';
 import { GridWithIcons } from '../../../components/LandingPage/components/GridWithIcons';
+import {
+  AwsCertificateManagerCard,
+  AwsCloudfrontCard,
+  AwsIamCard,
+  AwsRoute53Card,
+  AwsS3Card,
+} from '../../../components/LandingPage/components/ArchitectureCard/AWS';
 // Images
 import addInformationImg from '/images/add_information.svg';
 import serverStatusImg from '/images/server_status.svg';
@@ -16,6 +23,7 @@ import devFocusImg from '/images/dev_focus.svg';
 import buildingReactImg from '/images/building_react.svg';
 import usabilityTestingImg from '/images/usability_testing.svg';
 import versionControlImg from '/images/version_control.svg';
+// Icons
 import { TbCloudLockOpen } from 'react-icons/tb';
 import { RiUserHeartLine } from 'react-icons/ri';
 import { RiCodeSSlashLine } from 'react-icons/ri';
@@ -25,6 +33,7 @@ import { VscClippy } from 'react-icons/vsc';
 // Other
 import { words } from '../../../words/product/aws/react.words';
 import { env } from '../../../constants/env';
+import { ArchitectureCardGrid } from '../../../components/LandingPage/components/ArchitectureCard';
 
 const AwsReact = () => {
   const heroSectionUrl = `${env.CONSOLE_ENDPOINT}/signup`;
@@ -56,7 +65,6 @@ const AwsReact = () => {
 
           <ContentSeparatedSection
             content={words.infrastructureSection.gridCards()}
-            paddingBottom
           />
 
           {/* <FeatureSection
@@ -202,6 +210,23 @@ const AwsReact = () => {
               },
             ]}
           />
+        </>
+      </Layout>
+
+      <Layout paddingTop={false} backgroundColor="colorBackground">
+        <>
+          <SectionHeading
+            heading={words.awsSection.heading}
+            subheading={words.awsSection.subheading}
+          />
+
+          <ArchitectureCardGrid>
+            <AwsS3Card />
+            <AwsCloudfrontCard />
+            <AwsRoute53Card />
+            <AwsCertificateManagerCard />
+            <AwsIamCard />
+          </ArchitectureCardGrid>
         </>
       </Layout>
     </Box>

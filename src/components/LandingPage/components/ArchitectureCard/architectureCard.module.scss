@@ -1,11 +1,19 @@
 .architectureCard {
-  box-shadow: $box-shadow;
-  padding: 20px;
-  border: 2px solid rgb(225, 227, 234);
-  border-radius: 7px;
-  transition: transform 0.2s;
+  transition: box-shadow 0.2s transform 0.2s;
 }
 
 .architectureCard:hover {
-  transform: scale(1.06);
+  transform: translateY(-4px);
+}
+
+.architectureGridContainer {
+  grid-template-columns: repeat(1, 1fr);
+
+  @media screen and (min-width: $small-screen-min-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $desktop-min-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

@@ -171,4 +171,15 @@ export const words = {
         Leverage our collection of reusable, production-ready templates instead of starting from scratch.`,
     },
   },
+  awsSection: {
+    heading: (
+      <>
+        Best in class cloud{' '}
+        <SquiggleText text="architecture" imageAlt="Squiggly underline" />
+      </>
+    ),
+    subheading: `
+      Automate the orchestration of your AWS resources. 
+      Your architecture will feature enterprise-grade security, scalability, and performance built on modern best practices.`,
+  },
 };
