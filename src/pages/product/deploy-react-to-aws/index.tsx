@@ -16,6 +16,7 @@ import {
   AwsRoute53Card,
   AwsS3Card,
 } from '../../../components/LandingPage/components/ArchitectureCard/AWS';
+import { CtaButton } from '../../../components/LandingPage/components/CtaButton';
 // Images
 import addInformationImg from '/images/add_information.svg';
 import serverStatusImg from '/images/server_status.svg';
@@ -34,9 +35,11 @@ import { VscClippy } from 'react-icons/vsc';
 import { words } from '../../../words/product/aws/react.words';
 import { env } from '../../../constants/env';
 import { ArchitectureCardGrid } from '../../../components/LandingPage/components/ArchitectureCard';
+import { useRouter } from 'next/router';
 
 const AwsReact = () => {
   const heroSectionUrl = `${env.CONSOLE_ENDPOINT}/signup`;
+  const router = useRouter();
 
   return (
     <Box display="flex" flexDirection="column" marginBottom="space200">
@@ -209,6 +212,13 @@ const AwsReact = () => {
                 subheading: words.whyUseDepploySection.reason6.subheading,
               },
             ]}
+          />
+
+          <CtaButton
+            buttonText={words.heroSection.button}
+            onClickButton={() => router.push(heroSectionUrl)}
+            marginBottom
+            center
           />
         </>
       </Layout>
