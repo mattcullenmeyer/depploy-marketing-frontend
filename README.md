@@ -14,6 +14,8 @@ Install Sanity.io VS Code extension
 
 Illustrations come from https://undraw.co/illustrations
 
+Icons come from https://react-icons.github.io/react-icons and https://paste.twilio.design/components/icons
+
 ## Spacing and layout
 
 https://paste.twilio.design/foundations/spacing-and-layout

@@ -17,7 +17,7 @@ export const words = {
     // h2: `Provision AWS infrastructure for your React app in minutes without logging into the AWS console.
     //   Get fast and secure hosting, global CDN caching, TLS provisioning, and more.`,
     subheading: `Easily provision and update your cloud infrastructure on AWS without logging into the AWS console. 
-      Get fast and secure hosting, global CDN caching, TLS provisioning, and more out-of-the-box for your React app.`,
+      Get fast and secure hosting, global CDN caching, TLS provisioning, and more out of the box for your React app.`,
     button: 'Get started free',
     imageAlt: 'People building a React app static website on AWS',
   },
@@ -29,7 +29,7 @@ export const words = {
         minutes
       </>
     ),
-    subheading: 'Build, deploy, and scale your React app on AWS with Depploy',
+    subheading: 'Build, deploy, and scale your React app on AWS with Depploy.',
     gridCards: (): GridCardProps[] => [
       {
         heading: 'Fully managed AWS solution',
@@ -124,6 +124,51 @@ export const words = {
       text: `
         Confidently deploy to production by previewing changes in advance. 
         Every pull request automatically deploys a new version of your site with its own URL to preview before going live.`,
+    },
+  },
+  whyUseDepploySection: {
+    heading: (
+      <>
+        Why use <SquiggleText text="Depploy" imageAlt="Squiggly underline" />?
+      </>
+    ),
+    subheading:
+      'Get the simple experience of a managed solution with the savings and flexibility of running your own infrastructure.',
+    reason1: {
+      heading: 'No devops required',
+      subheading: `
+        Easy to use and understand with no training or prior experience. 
+        No need to learn another templating taxonomy, CLI, SDK or write any YAML.`,
+    },
+    reason2: {
+      heading: 'It’s your infrastructure',
+      subheading: `
+        We deploy your React app directly to your AWS account. 
+        You maintain full control of your infrastructure at all times, even after leaving Depploy.`,
+    },
+    reason3: {
+      heading: 'Modern user experience',
+      subheading: `
+        The AWS console is outdated and has a steep learning curve. 
+        We've built an easy-to-use, modern UI because we think design and user experience are important.`,
+    },
+    reason4: {
+      heading: 'Avoid vendor lock-in',
+      subheading: `
+        Depploy offers flat and affordable pricing. 
+        Alternatives get costly if you have a large team of developers, sites with high bandwidth usage, or lengthy build times each month.`,
+    },
+    reason5: {
+      heading: 'Customize over time',
+      subheading: `
+        Perfect for both early-stage and later-stage projects. Use streamlined defaults to get started quickly. 
+        Customize configurations later with super intuitive options.`,
+    },
+    reason6: {
+      heading: 'Proven reusable templates',
+      subheading: `
+        Most static sites have the same basic infrastructure needs. 
+        Leverage our collection of reusable, production-ready templates instead of starting from scratch.`,
     },
   },
 };
