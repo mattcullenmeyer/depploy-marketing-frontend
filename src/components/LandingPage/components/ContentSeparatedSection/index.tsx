@@ -12,12 +12,10 @@ export interface ContentBlock {
 
 export interface ContentSeparatedSection {
   content: ContentBlock[];
-  paddingBottom?: boolean;
 }
 
 export function ContentSeparatedSection({
   content,
-  paddingBottom,
 }: ContentSeparatedSection): React.ReactElement {
   const contentBlocks: ContentBlock[] = [];
   content.forEach((value, index) => {
@@ -29,7 +27,7 @@ export function ContentSeparatedSection({
   });
 
   return (
-    <Box paddingBottom={paddingBottom ? 'space190' : 'space0'}>
+    <Box paddingY="space190">
       <ContentSeparatedRow content={contentBlocks} />
       <ContentSeparatedColumn content={contentBlocks} />
     </Box>

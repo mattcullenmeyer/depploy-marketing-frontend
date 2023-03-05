@@ -45,6 +45,7 @@ export function HeroSection({
           onClickButton={() => {
             router.push(buttonUrl);
           }}
+          marginTop
         />
         {/* TODO: Add this marketing copy as an optional prop */}
         {/* <Text as="p" marginTop="space50">

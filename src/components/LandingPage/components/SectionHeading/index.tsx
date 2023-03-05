@@ -22,7 +22,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       <Heading2 heading={heading} maxWidth="1200px" />
       {subheading && (
         <Box textAlign="center">
-          <Paragraph text={subheading} maxWidth="700px" />
+          <Paragraph text={subheading} maxWidth="750px" />
         </Box>
       )}
     </Box>

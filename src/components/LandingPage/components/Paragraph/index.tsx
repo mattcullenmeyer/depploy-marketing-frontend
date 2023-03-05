@@ -8,7 +8,7 @@ interface ParagraphProps {
 
 export function Paragraph({ text, maxWidth = '600px' }: ParagraphProps) {
   return (
-    <Box marginBottom="space90" maxWidth={maxWidth}>
+    <Box maxWidth={maxWidth}>
       <Text
         as="p"
         fontSize="fontSize50"

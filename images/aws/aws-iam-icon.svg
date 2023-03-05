@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="100.00001"
+   height="100.00001"
+   viewBox="0 0 100.00001 100.00001"
+   version="1.1"
+   id="svg434"
+   sodipodi:docname="iam.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview436"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+  <title
+     id="title419">Icon-Architecture/16/Arch_AWS-Identity-and-Access-Management_16</title>
+  <desc
+     id="desc421">Created with Sketch.</desc>
+  <circle
+     style="fill:url(#linearGradient31926);fill-opacity:1;stroke-width:0.999995"
+     id="path31852"
+     cx="50.000004"
+     cy="50.000004"
+     inkscape:export-filename="path31852.svg"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96"
+     r="50.000004" />
+  <defs
+     id="defs428">
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient31924"
+       id="linearGradient31926"
+       x1="91.362823"
+       y1="86.652443"
+       x2="128.06224"
+       y2="50.212669"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(3.7795278,0,0,3.7795278,-331.37777,-242.46754)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient31924">
+      <stop
+         style="stop-color:#ff4142;stop-opacity:1;"
+         offset="0"
+         id="stop31920" />
+      <stop
+         style="stop-color:#ff7700;stop-opacity:1;"
+         offset="1"
+         id="stop31922" />
+    </linearGradient>
+  </defs>
+  <path
+     d="M 25.937234,68.906466 H 74.062773 V 31.093542 H 25.937234 Z M 77.500311,29.374773 v 41.250462 c 0,0.948761 -0.770009,1.71877 -1.718769,1.71877 H 24.218465 c -0.948761,0 -1.71877,-0.770009 -1.71877,-1.71877 V 29.374773 c 0,-0.94876 0.770009,-1.718769 1.71877,-1.718769 h 51.563077 c 0.94876,0 1.718769,0.770009 1.718769,1.718769 z m -44.688,29.212202 13.743278,0.0069 0.0069,-10.305742 -13.743279,-0.0069 z m 3.437538,-13.743279 6.875077,0.0034 v -3.942857 c 0,-2.028147 -1.220326,-3.145348 -3.437538,-3.145348 h -0.0034 c -1.130951,0 -2.035024,0.302504 -2.61253,0.873135 -0.677195,0.670321 -0.818135,1.601893 -0.818135,2.265338 z M 29.876653,61.522633 C 29.556962,61.199505 29.374772,60.7595 29.374772,60.305745 l 0.0069,-13.74328 c 0,-0.948761 0.770009,-1.718769 1.718769,-1.718769 h 1.71187 l 0.0034,-3.946295 c 0,-1.894084 0.639382,-3.523476 1.842519,-4.712865 1.234077,-1.216888 2.970033,-1.863146 5.025683,-1.863146 h 0.0034 c 4.111296,0 6.875077,2.643467 6.875077,6.582886 v 3.946295 h 1.718769 c 0.457192,0 0.89376,0.182189 1.216888,0.50188 0.319766,0.323129 0.501956,0.763134 0.501956,1.216889 l -0.0069,13.74328 c 0,0.94876 -0.770009,1.718769 -1.718769,1.718769 l -17.180818,-0.0069 c -0.457192,0 -0.89376,-0.18219 -1.216888,-0.501881 z M 56.87508,55.156312 h 6.875077 V 51.718774 H 56.87508 Z m 0,-10.312616 H 70.625234 V 41.406157 H 56.87508 Z"
+     id="AWS-Identity-and-Access-Management_Icon_16_Squid"
+     fill="#ffffff"
+     style="fill-rule:evenodd;stroke:none;stroke-width:1" />
+</svg>

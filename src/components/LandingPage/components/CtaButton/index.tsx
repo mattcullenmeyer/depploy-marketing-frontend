@@ -4,11 +4,25 @@ import styles from './ctaButton.module.scss';
 interface CtaButtonProps {
   buttonText: string;
   onClickButton: () => void;
+  marginTop?: boolean;
+  marginBottom?: boolean;
+  center?: boolean;
 }
 
-export function CtaButton({ buttonText, onClickButton }: CtaButtonProps) {
+export function CtaButton({
+  buttonText,
+  onClickButton,
+  marginTop = false,
+  marginBottom = false,
+  center = false,
+}: CtaButtonProps) {
   return (
-    <Box marginTop="space90">
+    <Box
+      display="flex"
+      marginTop={marginTop ? 'space90' : 'space0'}
+      marginBottom={marginBottom ? 'space190' : 'space0'}
+      justifyContent={center ? 'center' : 'flex-start'}
+    >
       <button className={styles.ctaButton} onClick={onClickButton}>
         {buttonText}
       </button>
