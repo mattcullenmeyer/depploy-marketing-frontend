@@ -1,13 +1,7 @@
-.architectureCard {
-  transition: box-shadow 0.2s transform 0.2s;
-}
-
-.architectureCard:hover {
-  transform: translateY(-4px);
-}
-
-.architectureGridContainer {
+.gridContainer {
   grid-template-columns: repeat(1, 1fr);
+  padding: 2.25rem 0; // $space-100
+  row-gap: 2.25rem; // $space-100
 
   @media screen and (min-width: $small-screen-min-width) {
     grid-template-columns: repeat(2, 1fr);
@@ -15,5 +9,7 @@
 
   @media screen and (min-width: $desktop-min-width) {
     grid-template-columns: repeat(3, 1fr);
+    padding: 4.5rem 0; // $space-190
+    row-gap: 4.5rem; // $space-190
   }
 }

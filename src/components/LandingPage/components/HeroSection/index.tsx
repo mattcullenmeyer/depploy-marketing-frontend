@@ -4,7 +4,7 @@ import { Box } from '@twilio-paste/core/box';
 import { CtaButton } from '../CtaButton';
 import { Heading1 } from '../Heading1';
 import { Paragraph } from '../Paragraph';
-import styles from './heroSection.module.scss';
+import styles from './index.module.scss';
 
 interface HeroSectionProps {
   heading: string | React.ReactElement;
@@ -32,14 +32,14 @@ export function HeroSection({
       as="section"
       display="flex"
       alignItems="center"
-      rowGap="space190"
       columnGap="space190"
-      marginBottom="space190"
       className={styles.heroSectionContainer}
     >
       <Box className={styles.textColumn}>
         <Heading1 heading={heading} maxWidth={headingMaxWidth} />
-        <Paragraph text={subheading} maxWidth={subheadingMaxWidth} />
+        <Box className={styles.heroParagraph}>
+          <Paragraph text={subheading} maxWidth={subheadingMaxWidth} />
+        </Box>
         <CtaButton
           buttonText={buttonText}
           onClickButton={() => {

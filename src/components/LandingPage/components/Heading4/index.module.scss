@@ -1,0 +1,14 @@
+.heading4 {
+  font-size: 1rem !important; // $font-size-40
+  line-height: 1.5rem !important; // $line-height-40
+
+  @media screen and (min-width: $small-screen-min-width) {
+    font-size: 1.125rem !important; // $font-size-50
+    line-height: 1.75rem !important; // $line-height-50
+  }
+
+  @media screen and (min-width: $desktop-min-width) {
+    font-size: 1.25rem !important; // $font-size-60
+    line-height: 1.75rem !important; // $line-height-60
+  }
+}

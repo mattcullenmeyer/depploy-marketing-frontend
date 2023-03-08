@@ -1,0 +1,24 @@
+.heading1Container {
+  margin-top: 2.25rem; // $space-100
+
+  @media screen and (min-width: $desktop-min-width) {
+    margin-top: 4.5rem; // $space-190
+  }
+}
+
+.heading1 {
+  font-size: 2rem !important; // $font-size-90
+  line-height: 2.75rem !important; // $line-height-90
+  text-align: center;
+
+  @media screen and (min-width: $small-screen-min-width) {
+    font-size: 2.5rem !important; // $font-size-100
+    line-height: 3.25rem !important; // $line-height-100
+  }
+
+  @media screen and (min-width: $desktop-min-width) {
+    font-size: 3rem !important; // $font-size-110
+    line-height: 4rem !important; // $line-height-110
+    text-align: left;
+  }
+}

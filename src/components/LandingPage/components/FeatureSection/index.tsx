@@ -3,8 +3,7 @@ import { Text } from '@twilio-paste/core/text';
 import { CtaButton } from '../CtaButton';
 import { Paragraph } from '../Paragraph';
 import { Heading3 } from '../Heading3';
-import styles from './featureSection.module.scss';
-import globalStyles from '../../../../styles/variables.module.scss';
+import styles from './index.module.scss';
 
 interface FeatureSectionProps {
   name: string;
@@ -32,8 +31,6 @@ export function FeatureSection({
       as="section"
       display="flex"
       alignItems="center"
-      rowGap="space190"
-      paddingY="space190"
       style={{
         borderTop: hasBorderTop ? '1px solid rgba(91, 97, 110, 0.2)' : 'none',
         marginTop: hasBorderTop ? '80px' : '0',
@@ -45,13 +42,12 @@ export function FeatureSection({
       <Box className={styles.textColumn}>
         <Text
           as="h2"
-          style={{
-            color: globalStyles.secondaryColor,
-            fontSize: '16px',
-            letterSpacing: '1px',
-          }}
+          // style={{
+          //   color: globalStyles.secondaryColor,
+          // }}
           marginBottom="space30"
           fontWeight="fontWeightBold"
+          className={styles.featureTopic}
         >
           {name}
         </Text>

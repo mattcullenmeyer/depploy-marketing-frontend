@@ -1,0 +1,11 @@
+.paragraphSmall {
+  // font-size: 0.875rem !important; // $font-size-30
+  // line-height: 1.25rem !important; // $line-height-30
+  font-size: 1rem !important; // $font-size-40
+  line-height: 1.5rem !important; // $line-height-40
+
+  @media screen and (min-width: $desktop-min-width) {
+    font-size: 1rem !important; // $font-size-40
+    line-height: 1.5rem !important; // $line-height-40
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 // Components
 import { Box } from '@twilio-paste/core/box';
 import { Layout } from '../../../components/Layout';
@@ -17,6 +18,7 @@ import {
   AwsS3Card,
 } from '../../../components/LandingPage/components/ArchitectureCard/AWS';
 import { CtaButton } from '../../../components/LandingPage/components/CtaButton';
+import { ArchitectureCardGrid } from '../../../components/LandingPage/components/ArchitectureCard';
 // Images
 import addInformationImg from '/images/add_information.svg';
 import serverStatusImg from '/images/server_status.svg';
@@ -34,8 +36,6 @@ import { VscClippy } from 'react-icons/vsc';
 // Other
 import { words } from '../../../words/product/aws/react.words';
 import { env } from '../../../constants/env';
-import { ArchitectureCardGrid } from '../../../components/LandingPage/components/ArchitectureCard';
-import { useRouter } from 'next/router';
 
 const AwsReact = () => {
   const heroSectionUrl = `${env.CONSOLE_ENDPOINT}/signup`;

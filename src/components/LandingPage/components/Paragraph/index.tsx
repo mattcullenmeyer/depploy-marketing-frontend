@@ -1,5 +1,6 @@
 import { Box } from '@twilio-paste/core/box';
 import { Text } from '@twilio-paste/core/text';
+import styles from './index.module.scss';
 
 interface ParagraphProps {
   text: string;
@@ -9,12 +10,7 @@ interface ParagraphProps {
 export function Paragraph({ text, maxWidth = '600px' }: ParagraphProps) {
   return (
     <Box maxWidth={maxWidth}>
-      <Text
-        as="p"
-        fontSize="fontSize50"
-        fontWeight="fontWeightNormal"
-        lineHeight="lineHeight50"
-      >
+      <Text as="p" fontWeight="fontWeightNormal" className={styles.paragraph}>
         {text}
       </Text>
     </Box>

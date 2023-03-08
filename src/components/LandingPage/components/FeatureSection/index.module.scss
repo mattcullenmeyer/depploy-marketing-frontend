@@ -1,8 +1,16 @@
 .featureSectionContainer {
   flex-direction: column;
+  padding: 2.25rem 0; // $space-100
+  row-gap: 2.25rem; // $space-100
 
   .textColumn {
     width: 100%;
+
+    .featureTopic {
+      font-size: 0.875rem !important; // $font-size-30
+      letter-spacing: 1px;
+      color: $color-secondary;
+    }
   }
 
   .imageColumn {
@@ -13,10 +21,16 @@
 @media screen and (min-width: $desktop-min-width) {
   .featureSectionContainer {
     flex-direction: row;
+    padding: 4.5rem 0; // $space-190
+    row-gap: 4.5rem; // $space-190
 
     .textColumn {
       width: 50%;
       padding-right: 76px;
+
+      .featureTopic {
+        font-size: 1rem !important; // $font-size-40
+      }
     }
 
     .imageColumn {

@@ -1,9 +1,12 @@
 .sideBySideContainer {
   flex-direction: column;
+  padding: 2.25rem 0; // $space-100
+  row-gap: 2.25rem; // $space-100
 
   .sideColumnContainer {
     width: 100%;
     flex-direction: column-reverse;
+    row-gap: 2.25rem; // $space-100
 
     .sideColumnImageBlock {
       padding-top: 32px;
@@ -14,10 +17,13 @@
 @media screen and (min-width: $desktop-min-width) {
   .sideBySideContainer {
     flex-direction: row;
+    padding: 4.5rem 0; // $space-190
+    row-gap: 4.5rem; // $space-190
 
     .sideColumnContainer {
       width: 50%;
       flex-direction: column;
+      row-gap: 4.5rem; // $space-190
 
       .sideColumnImageBlock {
         padding-top: 0;

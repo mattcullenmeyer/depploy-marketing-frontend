@@ -1,5 +1,5 @@
 import { Box } from '@twilio-paste/core/box';
-import styles from './ctaButton.module.scss';
+import styles from './index.module.scss';
 
 interface CtaButtonProps {
   buttonText: string;
@@ -20,8 +20,8 @@ export function CtaButton({
     <Box
       display="flex"
       marginTop={marginTop ? 'space90' : 'space0'}
-      marginBottom={marginBottom ? 'space190' : 'space0'}
       justifyContent={center ? 'center' : 'flex-start'}
+      className={marginBottom ? styles.ctaButtonContainer : ''}
     >
       <button className={styles.ctaButton} onClick={onClickButton}>
         {buttonText}

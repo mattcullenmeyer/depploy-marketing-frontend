@@ -4,13 +4,12 @@ import styles from './index.module.scss';
 
 interface Heading3Props {
   heading: React.ReactNode;
-  maxWidth?: string;
 }
 
-export function Heading3({ heading, maxWidth = '700px' }: Heading3Props) {
+export function Heading4({ heading }: Heading3Props) {
   return (
-    <Box marginBottom="space50" maxWidth={maxWidth}>
-      <Text as="h3" fontWeight="fontWeightBold" className={styles.heading3}>
+    <Box>
+      <Text as="h4" fontWeight="fontWeightBold" className={styles.heading4}>
         {heading}
       </Text>
     </Box>

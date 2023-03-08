@@ -1,5 +1,5 @@
 import React from 'react';
-import { GridCardProps } from '../../../components/LandingPage/components/CardRow';
+import { ContentBlock } from '../../../components/LandingPage/components/ContentSeparatedSection';
 import { SquiggleText } from '../../../components/LandingPage/components/SquiggleText';
 import globalStyles from '../../../styles/variables.module.scss';
 
@@ -15,9 +15,9 @@ export const words = {
       </>
     ),
     // h2: `Provision AWS infrastructure for your React app in minutes without logging into the AWS console.
-    //   Get fast and secure hosting, global CDN caching, TLS provisioning, and more.`,
-    subheading: `Easily provision and update your cloud infrastructure on AWS without logging into the AWS console. 
-      Get fast and secure hosting, global CDN caching, TLS provisioning, and more out of the box for your React app.`,
+    //   Get fast and secure hosting, global CDN caching, TLS provisioning, and more  out of the box for your React app.`,
+    subheading: `Easily provision and update your cloud infrastructure on AWS. 
+      Get fast and secure hosting, global CDN caching, TLS provisioning, and more.`,
     button: 'Get started free',
     imageAlt: 'People building a React app static website on AWS',
   },
@@ -30,12 +30,12 @@ export const words = {
       </>
     ),
     subheading: 'Build, deploy, and scale your React app on AWS with Depploy.',
-    gridCards: (): GridCardProps[] => [
+    gridCards: (): ContentBlock[] => [
       {
         heading: 'Fully managed AWS solution',
         paragraph: `
-          Quickly launch your React app into production with zero configuration required. 
-          Depploy automatically handles all the AWS deployment details so you can focus on app development.`,
+          Quickly launch your React app into production with zero configuration. 
+          Depploy handles all the AWS deployment details so you can focus on app development.`,
       },
       {
         heading: 'Blazing fast, global CDN',
@@ -46,8 +46,8 @@ export const words = {
       {
         heading: 'TLS certificate renewal',
         paragraph: `
-          Easily encrypt and secure your network communications with SSL/TLS certificates. 
-          Certificates are provisioned and renewed automatically by AWS Certificate Manager.`,
+          Easily encrypt and secure your network communications with SSL/TLS certificates, 
+          provisioned and renewed automatically by AWS Certificate Manager.`,
       },
     ],
   },
@@ -103,8 +103,8 @@ export const words = {
   integrationSection: {
     heading: (
       <>
-        Automatic and{' '}
-        <SquiggleText text="continuous" imageAlt="Squiggly underline" /> deploys
+        <SquiggleText text="Continuous" imageAlt="Squiggly underline" /> and
+        automatic deploys
       </>
     ),
   },
@@ -149,8 +149,8 @@ export const words = {
     reason3: {
       heading: 'Modern user experience',
       subheading: `
-        The AWS console is outdated and has a steep learning curve. 
-        We've built an easy-to-use, modern UI because we think design and user experience are important.`,
+        The AWS console has a steep learning curve and an outdated UI. 
+        We built an easy-to-use, modern UI because we think design and user experience are important.`,
     },
     reason4: {
       heading: 'Avoid vendor lock-in',
@@ -161,8 +161,9 @@ export const words = {
     reason5: {
       heading: 'Customize over time',
       subheading: `
-        Perfect for both early-stage and later-stage projects. Use streamlined defaults to get started quickly. 
-        Customize configurations later with super intuitive options.`,
+        Perfect for both early-stage and later-stage projects. 
+        Use streamlined defaults to get started quickly. 
+        Fine tune your configurations later with customizable options.`,
     },
     reason6: {
       heading: 'Proven reusable templates',
@@ -180,6 +181,6 @@ export const words = {
     ),
     subheading: `
       Automate the orchestration of your AWS resources. 
-      Your architecture will feature enterprise-grade security, scalability, and performance built on modern best practices.`,
+      Get enterprise-grade security, scalability, and performance built on modern best practices.`,
   },
 };

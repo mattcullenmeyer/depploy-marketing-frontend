@@ -1,0 +1,17 @@
+.squiggleText {
+  position: relative;
+}
+
+.squiggleImage {
+  position: absolute;
+  left: 0;
+  top: 8px;
+
+  @media screen and (min-width: $small-screen-min-width) {
+    top: 10px;
+  }
+
+  @media screen and (min-width: $desktop-min-width) {
+    top: 12px;
+  }
+}
