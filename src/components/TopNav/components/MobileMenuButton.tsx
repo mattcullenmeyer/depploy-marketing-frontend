@@ -35,6 +35,7 @@ export function MobileMenuButton() {
       isDarkMode ? ThemeMode.Default : ThemeMode.Dark
     );
     setIsDarkMode(!isDarkMode);
+    menu.hide();
   };
 
   return (
