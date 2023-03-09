@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Box } from '@twilio-paste/core/box';
-import { Heading } from '@twilio-paste/core/heading';
+import { Heading4 } from '../Heading4';
 import { HelpText } from '@twilio-paste/core/help-text';
 import {
   MediaBody,
@@ -8,7 +8,7 @@ import {
   MediaObject,
 } from '@twilio-paste/core/media-object';
 import { ParagraphSmall } from '../ParagraphSmall';
-import styles from './architectureCard.module.scss';
+import styles from './index.module.scss';
 
 interface ArchitectureCardProps {
   image: string;
@@ -37,9 +37,7 @@ export const ArchitectureCard = ({
         <Image src={image} alt={imageAlt} height="45px" width="45px" />
       </MediaFigure>
       <MediaBody>
-        <Heading as="h4" variant="heading30" marginBottom="space0">
-          {heading}
-        </Heading>
+        <Heading4 heading={heading} />
         <HelpText marginTop="space0">{subheading}</HelpText>
       </MediaBody>
     </MediaObject>
@@ -59,7 +57,6 @@ export const ArchitectureCardGrid = ({
     gridAutoRows="1fr"
     rowGap="space90"
     columnGap="space90"
-    paddingY="space190"
     className={styles.architectureGridContainer}
   >
     {children}

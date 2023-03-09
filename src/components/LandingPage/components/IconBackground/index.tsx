@@ -4,15 +4,15 @@ import globalStyles from '../../../../styles/variables.module.scss';
 export const IconBackground = ({ children }: { children: React.ReactNode }) => (
   <Box
     marginBottom="space70"
-    height="55px"
-    width="55px"
+    height="50px"
+    width="50px"
     backgroundColor="colorBackgroundDecorative40Weakest"
     display="flex"
     justifyContent="center"
     alignItems="center"
     borderRadius="borderRadius30"
     style={{
-      fontSize: '35px',
+      fontSize: '30px',
       color: globalStyles.secondaryColor,
     }}
   >

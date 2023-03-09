@@ -33,6 +33,10 @@ $top-nav-height: 60px;
   display: none;
 }
 
+.theme_button {
+  display: none;
+}
+
 .mobile_menu_link:hover {
   color: $color-primary;
   text-decoration: underline;
@@ -71,6 +75,10 @@ $top-nav-height: 60px;
   }
 
   .menu_signup_button {
+    display: flex;
+  }
+
+  .theme_button {
     display: flex;
   }
 }

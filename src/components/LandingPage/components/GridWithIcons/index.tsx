@@ -2,7 +2,7 @@ import { Heading } from '@twilio-paste/core/heading';
 import { Box } from '@twilio-paste/core/box';
 import { IconBackground } from '../IconBackground';
 import { ParagraphSmall } from '../ParagraphSmall';
-import styles from './gridWithIcons.module.scss';
+import styles from './index.module.scss';
 
 export interface GridItemProps {
   icon: React.ReactNode;
@@ -18,9 +18,7 @@ export const GridWithIcons = ({
   <Box
     display="grid"
     gridAutoRows="1fr"
-    rowGap="space190"
     columnGap="space190"
-    paddingY="space190"
     className={styles.gridContainer}
   >
     {gridItems.map((gridItem) => (

@@ -1,9 +1,15 @@
 .heroSectionContainer {
   flex-direction: column;
+  margin-bottom: 2.25rem; // $space-100
+  row-gap: 2.25rem; // $space-100
 
   .textColumn {
     width: 100%;
     align-items: center;
+
+    .heroParagraph {
+      text-align: center;
+    }
   }
 
   .imageColumn {
@@ -14,10 +20,16 @@
 @media screen and (min-width: $desktop-min-width) {
   .heroSectionContainer {
     flex-direction: row;
+    margin-bottom: 4.5rem; // $space-190
+    row-gap: 4.5rem; // $space-190
 
     .textColumn {
       width: 50%;
       align-items: flex-start;
+
+      .heroParagraph {
+        text-align: left;
+      }
     }
 
     .imageColumn {

@@ -1,6 +1,6 @@
 import { Box } from '@twilio-paste/core/box';
 import { BackgroundColorsKeys } from '@twilio-paste/theme/dist/types/GenericThemeShape';
-import styles from './layout.module.scss';
+import styles from './index.module.scss';
 
 interface LayoutProps {
   paddingTop?: boolean;

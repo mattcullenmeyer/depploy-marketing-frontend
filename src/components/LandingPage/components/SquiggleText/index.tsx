@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import squiggleImg from '/images/purple_squiggle.svg';
+import styles from './index.module.scss';
 
 interface SquiggleTextProps {
   text: string;
@@ -11,9 +12,9 @@ export function SquiggleText({
   imageAlt,
 }: SquiggleTextProps): React.ReactElement {
   return (
-    <span style={{ position: 'relative' }}>
+    <span className={styles.squiggleText}>
       {text}
-      <span style={{ position: 'absolute', left: 0, top: '15px' }}>
+      <span className={styles.squiggleImage}>
         <Image src={squiggleImg} alt={imageAlt} layout="intrinsic" />
       </span>
     </span>

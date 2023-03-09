@@ -1,0 +1,23 @@
+.contentSeparatedContainer {
+  padding: 2.25rem 0; // $space-100
+
+  @media screen and (min-width: $desktop-min-width) {
+    padding: 4.5rem 0; // $space-190
+  }
+}
+
+.contentSeparatedRow {
+  display: none;
+
+  @media screen and (min-width: $desktop-min-width) {
+    display: flex;
+  }
+}
+
+.contentSeparatedColumn {
+  display: flex;
+
+  @media screen and (min-width: $desktop-min-width) {
+    display: none;
+  }
+}

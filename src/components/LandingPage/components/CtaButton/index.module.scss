@@ -1,3 +1,11 @@
+.ctaButtonContainer {
+  padding-bottom: 2.25rem; // $space-100
+
+  @media screen and (min-width: $desktop-min-width) {
+    padding-bottom: 4.5rem; // $space-190
+  }
+}
+
 .ctaButton {
   border-radius: 7px;
   padding: 16px 24px;

@@ -2,7 +2,7 @@ import { Box } from '@twilio-paste/core/box';
 import { Heading3 } from '../Heading3';
 import { ImageBlock } from '../ImageBlock';
 import { Paragraph } from '../Paragraph';
-import styles from './sideBySide.module.scss';
+import styles from './index.module.scss';
 
 interface SideComponentProps {
   imgSrc: string;
@@ -26,9 +26,7 @@ export function SideBySide({
       display="flex"
       alignItems="flex-start"
       justifyContent="flex-start"
-      paddingY="space190"
       columnGap="space190"
-      rowGap="space190"
       className={styles.sideBySideContainer}
     >
       <SideComponent
