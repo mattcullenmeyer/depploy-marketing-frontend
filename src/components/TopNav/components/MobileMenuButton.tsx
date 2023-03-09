@@ -1,6 +1,10 @@
 import { useRouter } from 'next/router';
+import { useGlobalContext } from '../../../state/context';
+import { THEME_MODE } from '../../../constants/localStorage';
+import { ThemeMode } from '../../../types/user';
 import { Box } from '@twilio-paste/core/box';
 import { Button } from '@twilio-paste/core/button';
+import { Text } from '@twilio-paste/core/text';
 import {
   Menu,
   MenuButton,
@@ -10,10 +14,11 @@ import {
 } from '@twilio-paste/core/menu';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { MobileMenuLink } from './MobileMenuLink';
-import styles from '../topNav.module.scss';
 import { words, links } from '../words';
+import styles from '../index.module.scss';
 
 export function MobileMenuButton() {
+  const { isDarkMode, setIsDarkMode } = useGlobalContext();
   const menu = useMenuState();
   const router = useRouter();
 
@@ -22,6 +27,14 @@ export function MobileMenuButton() {
   };
   const onClickSignin = () => {
     router.push(links.signin);
+  };
+
+  const handleThemeChange = () => {
+    localStorage.setItem(
+      THEME_MODE,
+      isDarkMode ? ThemeMode.Default : ThemeMode.Dark
+    );
+    setIsDarkMode(!isDarkMode);
   };
 
   return (
@@ -38,6 +51,16 @@ export function MobileMenuButton() {
         </MenuItem>
         <MenuItem {...menu}>
           <MobileMenuLink href={links.pricing} label={words.pricing} />
+        </MenuItem>
+        <MenuItem {...menu}>
+          <Text
+            as="a"
+            fontSize="fontSize40"
+            textDecoration="none"
+            onClick={handleThemeChange}
+          >
+            {isDarkMode ? 'Light theme' : 'Dark theme'}
+          </Text>
         </MenuItem>
         <MenuSeparator {...menu} />
         <MenuItem {...menu}>

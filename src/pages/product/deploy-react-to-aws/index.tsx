@@ -42,7 +42,7 @@ const AwsReact = () => {
   const router = useRouter();
 
   return (
-    <Box display="flex" flexDirection="column" marginBottom="space200">
+    <Box display="flex" flexDirection="column">
       <Layout paddingTop={true} backgroundColor="colorBackgroundPrimaryWeakest">
         <HeroSection
           heading={words.heroSection.heading}

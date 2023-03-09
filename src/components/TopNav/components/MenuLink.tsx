@@ -1,6 +1,6 @@
 import { Box } from '@twilio-paste/core/box';
 import { Text } from '@twilio-paste/core/text';
-import styles from '../topNav.module.scss';
+import styles from '../index.module.scss';
 
 interface MenuLinkProps {
   href: string;

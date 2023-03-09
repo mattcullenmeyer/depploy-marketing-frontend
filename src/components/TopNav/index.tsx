@@ -6,7 +6,7 @@ import { MenuLink } from './components/MenuLink';
 import { MenuLogo } from './components/MenuLogo';
 import { MobileMenuButton } from './components/MobileMenuButton';
 import { ThemeButton } from './components/ThemeButton';
-import styles from './topNav.module.scss';
+import styles from './index.module.scss';
 import { words, links } from './words';
 
 export function TopNav(): React.ReactElement {
