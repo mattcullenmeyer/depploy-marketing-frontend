@@ -4,6 +4,7 @@ import { Box } from '@twilio-paste/core/box';
 import { CtaButton } from '../CtaButton';
 import { Heading1 } from '../Heading1';
 import { Paragraph } from '../Paragraph';
+import { HelpText } from '@twilio-paste/core';
 import styles from './index.module.scss';
 
 interface HeroSectionProps {
@@ -13,6 +14,7 @@ interface HeroSectionProps {
   subheadingMaxWidth?: string;
   buttonText: string;
   buttonUrl: string;
+  objectionBustingCopy?: string;
   children: React.ReactElement;
 }
 
@@ -23,6 +25,7 @@ export function HeroSection({
   subheadingMaxWidth = '640px',
   buttonText,
   buttonUrl,
+  objectionBustingCopy,
   children,
 }: HeroSectionProps) {
   const router = useRouter();
@@ -47,10 +50,12 @@ export function HeroSection({
           }}
           marginTop
         />
-        {/* TODO: Add this marketing copy as an optional prop */}
-        {/* <Text as="p" marginTop="space50">
-          Deploy your first app free. Upgrade anytime.
-        </Text> */}
+
+        {objectionBustingCopy && (
+          <Box marginTop="space70">
+            <HelpText>{objectionBustingCopy}</HelpText>
+          </Box>
+        )}
       </Box>
       <Box className={styles.imageColumn}>{children}</Box>
     </Box>

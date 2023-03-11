@@ -7,25 +7,32 @@ interface CtaButtonProps {
   marginTop?: boolean;
   marginBottom?: boolean;
   center?: boolean;
+  secondaryColor?: boolean;
 }
 
-export function CtaButton({
+export const CtaButton = ({
   buttonText,
   onClickButton,
   marginTop = false,
   marginBottom = false,
   center = false,
-}: CtaButtonProps) {
-  return (
-    <Box
-      display="flex"
-      marginTop={marginTop ? 'space90' : 'space0'}
-      justifyContent={center ? 'center' : 'flex-start'}
-      className={marginBottom ? styles.ctaButtonContainer : ''}
+  secondaryColor = false,
+}: CtaButtonProps) => (
+  <Box
+    display="flex"
+    marginTop={marginTop ? 'space90' : 'space0'}
+    justifyContent={center ? 'center' : 'flex-start'}
+    className={marginBottom ? styles.ctaButtonContainer : ''}
+  >
+    <button
+      className={
+        styles.ctaButton +
+        ' ' +
+        (secondaryColor ? styles.secondaryBackground : styles.primaryBackground)
+      }
+      onClick={onClickButton}
     >
-      <button className={styles.ctaButton} onClick={onClickButton}>
-        {buttonText}
-      </button>
-    </Box>
-  );
-}
+      {buttonText}
+    </button>
+  </Box>
+);

@@ -27,8 +27,17 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         heading={heading}
         maxWidth="1200px"
         inverseColor={inverseColor}
+        marginBottom={false}
       />
-      {subheading && <Paragraph text={subheading} maxWidth="750px" />}
+      {subheading && (
+        <Box marginTop="space50">
+          <Paragraph
+            text={subheading}
+            inverseColor={inverseColor}
+            maxWidth="750px"
+          />
+        </Box>
+      )}
     </Box>
   );
 };

@@ -4,6 +4,7 @@ import { SquiggleText } from '../../../components/LandingPage/components/Squiggl
 import globalStyles from '../../../styles/variables.module.scss';
 
 export const words = {
+  ctaButton: 'Get started free',
   heroSection: {
     heading: (
       <>
@@ -18,8 +19,9 @@ export const words = {
     //   Get fast and secure hosting, global CDN caching, TLS provisioning, and more  out of the box for your React app.`,
     subheading: `Easily provision and update your cloud infrastructure on AWS. 
       Get fast and secure hosting, global CDN caching, TLS provisioning, and more.`,
-    button: 'Get started free',
     imageAlt: 'People building a React app static website on AWS',
+    objectionBustingCopy:
+      'Deploy your first app free. No credit card required.',
   },
   infrastructureSection: {
     heading: (
@@ -182,5 +184,60 @@ export const words = {
     subheading: `
       Automate the orchestration of your AWS resources. 
       Get enterprise-grade security, scalability, and performance built on modern best practices.`,
+  },
+  faqSection: {
+    heading: 'Frequently asked questions',
+    questions: [
+      {
+        question: 'How does Depploy access my AWS account?',
+        answer: `
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        `,
+      },
+      {
+        question: `Is my AWS account safe with the permissions I'm providing?`,
+        answer: '',
+      },
+      {
+        question: 'How is this different from AWS Elastic Beanstalk?',
+        answer: '',
+      },
+      {
+        question: `Can't I just deploy this myself?`,
+        answer: `
+          You certainly can if you have the time and engineering resources. 
+          However, provisioning and managing cloud infrastructure takes away precious time from React app development. 
+          Depploy provides a fully managed solution that doesn't require cloud experience or training to get started.`,
+      },
+      {
+        question: 'How much effort is required to get setup?',
+        answer:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      },
+      {
+        question: 'Can I manually modify AWS resources managed by Depploy?',
+        answer: '',
+      },
+      {
+        question:
+          'What happens to my AWS resources if I cancel my subscription?',
+        answer: '',
+      },
+      {
+        question: 'Is an annual subscription required?',
+        answer: '',
+      },
+      {
+        question:
+          'Can I try Depploy before committing to an annual subscription?',
+        answer: '',
+      },
+    ],
+  },
+  ctaSection: {
+    heading: 'Try Depploy for free',
+    subheading: `
+      It only takes a few minutes to deploy your React app. 
+      No credit card required.`,
   },
 };

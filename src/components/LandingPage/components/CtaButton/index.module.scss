@@ -9,18 +9,37 @@
 .ctaButton {
   border-radius: 7px;
   padding: 16px 24px;
-  background-color: $color-primary;
-  border: none;
   color: white;
   font-size: 16px;
   font-weight: 600;
   font-family: $font-family;
   width: 100%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.primaryBackground {
+  background-color: $color-primary;
+  border: solid 1px $color-primary;
+}
+
+.secondaryBackground {
+  background-color: $color-secondary;
+  border: solid 1px $color-secondary;
 }
 
 .ctaButton:hover {
-  background-color: rgb(0, 18, 92);
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
+}
+
+.primaryBackground:hover {
+  border: solid 1px $color-primary;
+  color: $color-primary;
+}
+
+.secondaryBackground:hover {
+  border: solid 1px $color-secondary;
+  color: $color-secondary;
 }
 
 @media screen and (min-width: $tablet-min-width) {

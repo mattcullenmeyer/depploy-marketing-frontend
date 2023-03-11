@@ -1,0 +1,12 @@
+.faqContainer {
+  column-count: 1;
+  padding: 2.25rem 0; // $space-100
+
+  @media screen and (min-width: $small-screen-min-width) {
+    column-count: 2;
+  }
+
+  @media screen and (min-width: $desktop-min-width) {
+    padding: 4.5rem 0; // $space-190
+  }
+}

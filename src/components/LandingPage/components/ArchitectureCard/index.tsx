@@ -28,7 +28,7 @@ export const ArchitectureCard = ({
   <Box
     borderRadius="borderRadius30"
     padding="space90"
-    boxShadow="shadow"
+    boxShadow="shadowCard"
     backgroundColor="colorBackgroundBody"
     className={styles.architectureCard}
   >
