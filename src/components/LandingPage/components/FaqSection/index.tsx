@@ -2,7 +2,7 @@ import {
   Disclosure,
   DisclosureContent,
   DisclosureHeading,
-} from '@twilio-paste/core';
+} from '@twilio-paste/core/disclosure';
 import { Box } from '@twilio-paste/core/box';
 import { ParagraphSmall } from '../ParagraphSmall';
 import styles from './index.module.scss';
@@ -13,7 +13,7 @@ interface Faq {
 }
 
 export const FaqSection = ({ faqs }: { faqs: Faq[] }) => (
-  <Box columnGap="space100" className={styles.faqContainer}>
+  <Box columnGap="space90" className={styles.faqContainer}>
     {faqs.map(({ question, answer }) => (
       <FaqItem key={question} question={question} answer={answer} />
     ))}

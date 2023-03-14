@@ -4,7 +4,7 @@ import { Box } from '@twilio-paste/core/box';
 import { CtaButton } from '../CtaButton';
 import { Heading1 } from '../Heading1';
 import { Paragraph } from '../Paragraph';
-import { HelpText } from '@twilio-paste/core';
+import { HelpText } from '@twilio-paste/core/help-text';
 import styles from './index.module.scss';
 
 interface HeroSectionProps {
