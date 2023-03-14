@@ -245,7 +245,10 @@ const AwsReact = () => {
 
       <Layout>
         <>
-          <SectionHeading heading={words.faqSection.heading} />
+          <SectionHeading
+            heading={words.faqSection.heading}
+            subheading={words.faqSection.subheading}
+          />
 
           <FaqSection faqs={words.faqSection.questions} />
 

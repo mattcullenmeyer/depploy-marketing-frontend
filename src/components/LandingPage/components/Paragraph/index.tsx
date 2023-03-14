@@ -3,7 +3,7 @@ import { Text } from '@twilio-paste/core/text';
 import styles from './index.module.scss';
 
 interface ParagraphProps {
-  text: string;
+  text: React.ReactNode;
   maxWidth?: string;
   inverseColor?: boolean;
 }

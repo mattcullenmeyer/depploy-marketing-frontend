@@ -4,8 +4,8 @@ import { Paragraph } from '../Paragraph';
 import styles from './index.module.scss';
 
 interface SectionHeadingProps {
-  heading: string | React.ReactNode;
-  subheading?: string;
+  heading: React.ReactNode;
+  subheading?: React.ReactNode;
   inverseColor?: boolean;
 }
 
