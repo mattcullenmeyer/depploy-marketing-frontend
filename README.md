@@ -30,4 +30,4 @@ Use an 8-pixel UI grid
 | space90  | 32     | margin below headings, padding around box, margin above button |
 | space130 | 48     |                                                                |
 | space170 | 64     | top margin of page                                             |
-| space190 | 72     | margin between columns                                         |
+| space190 | 72     | margin between sections & columns                              |

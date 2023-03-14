@@ -4,12 +4,14 @@ import styles from './index.module.scss';
 
 interface LayoutProps {
   paddingTop?: boolean;
+  borderTop?: boolean;
   backgroundColor?: BackgroundColorsKeys;
   children: React.ReactElement;
 }
 
 export function Layout({
-  paddingTop = true,
+  paddingTop = false,
+  borderTop = false,
   backgroundColor = 'colorBackgroundBody',
   children,
 }: LayoutProps): React.ReactElement {
@@ -18,7 +20,14 @@ export function Layout({
 
   return (
     <Box backgroundColor={backgroundColor}>
-      <Box className={layoutClassName}>{children}</Box>
+      <Box
+        className={layoutClassName}
+        style={{
+          borderTop: borderTop ? '1px solid rgba(91, 97, 110, 0.2)' : 'none',
+        }}
+      >
+        {children}
+      </Box>
     </Box>
   );
 }

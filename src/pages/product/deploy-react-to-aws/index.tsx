@@ -19,6 +19,8 @@ import {
 } from '../../../components/LandingPage/components/ArchitectureCard/AWS';
 import { CtaButton } from '../../../components/LandingPage/components/CtaButton';
 import { ArchitectureCardGrid } from '../../../components/LandingPage/components/ArchitectureCard';
+import { FaqSection } from '../../../components/LandingPage/components/FaqSection';
+import { CtaSection } from '../../../components/LandingPage/components/CtaSection';
 // Images
 import addInformationImg from '/images/add_information.svg';
 import serverStatusImg from '/images/server_status.svg';
@@ -38,17 +40,18 @@ import { words } from '../../../words/product/aws/react.words';
 import { env } from '../../../constants/env';
 
 const AwsReact = () => {
-  const heroSectionUrl = `${env.CONSOLE_ENDPOINT}/signup`;
+  const ctaButtonUrl = `${env.CONSOLE_ENDPOINT}/signup`;
   const router = useRouter();
 
   return (
     <Box display="flex" flexDirection="column">
-      <Layout paddingTop={true} backgroundColor="colorBackgroundPrimaryWeakest">
+      <Layout paddingTop backgroundColor="colorBackgroundPrimaryWeakest">
         <HeroSection
           heading={words.heroSection.heading}
           subheading={words.heroSection.subheading}
-          buttonText={words.heroSection.button}
-          buttonUrl={heroSectionUrl}
+          objectionBustingCopy={words.heroSection.objectionBustingCopy}
+          buttonText={words.ctaButton}
+          buttonUrl={ctaButtonUrl}
         >
           <ImageBlock
             src={buildingReactImg}
@@ -59,7 +62,7 @@ const AwsReact = () => {
         </HeroSection>
       </Layout>
 
-      <Layout paddingTop={false}>
+      <Layout>
         <>
           <SectionHeading
             heading={words.infrastructureSection.heading}
@@ -151,7 +154,7 @@ const AwsReact = () => {
         </>
       </Layout>
 
-      <Layout paddingTop={false}>
+      <Layout>
         <>
           <SectionHeading heading={words.integrationSection.heading} />
 
@@ -172,7 +175,7 @@ const AwsReact = () => {
         </>
       </Layout>
 
-      <Layout paddingTop={false}>
+      <Layout borderTop>
         <>
           <SectionHeading
             heading={words.whyUseDepploySection.heading}
@@ -215,15 +218,15 @@ const AwsReact = () => {
           />
 
           <CtaButton
-            buttonText={words.heroSection.button}
-            onClickButton={() => router.push(heroSectionUrl)}
+            buttonText={words.ctaButton}
+            onClickButton={() => router.push(ctaButtonUrl)}
             marginBottom
             center
           />
         </>
       </Layout>
 
-      <Layout paddingTop={false} backgroundColor="colorBackground">
+      <Layout backgroundColor="colorBackground">
         <>
           <SectionHeading
             heading={words.awsSection.heading}
@@ -237,6 +240,24 @@ const AwsReact = () => {
             <AwsCertificateManagerCard />
             <AwsIamCard />
           </ArchitectureCardGrid>
+        </>
+      </Layout>
+
+      <Layout>
+        <>
+          <SectionHeading
+            heading={words.faqSection.heading}
+            subheading={words.faqSection.subheading}
+          />
+
+          <FaqSection faqs={words.faqSection.questions} />
+
+          <CtaSection
+            heading={words.ctaSection.heading}
+            subheading={words.ctaSection.subheading}
+            buttonText={words.ctaButton}
+            buttonUrl={ctaButtonUrl}
+          />
         </>
       </Layout>
     </Box>
