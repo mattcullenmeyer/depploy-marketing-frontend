@@ -28,7 +28,7 @@ export const words = {
   },
   iam: {
     heading: 'IAM',
-    subheading: 'Identity and access',
+    subheading: 'Identity & access',
     description:
       'Set up permissions to allow access between your AWS resources.',
     imageAlt: 'AWS IAM Icon',

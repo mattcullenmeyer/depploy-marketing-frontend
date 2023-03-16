@@ -23,8 +23,7 @@ export const words = {
     subheading: `Easily provision and update your cloud infrastructure on AWS. 
       Get fast and secure hosting, global CDN caching, TLS provisioning, and more.`,
     imageAlt: 'People building a React app static website on AWS',
-    objectionBustingCopy:
-      'Deploy your first 2 apps free. No credit card required.',
+    objectionBustingCopy: 'Deploy first 2 apps free. No credit card required.',
   },
   infrastructureSection: {
     heading: (
@@ -140,13 +139,13 @@ export const words = {
     subheading:
       'Get the simple experience of a managed solution with the savings and flexibility of running your own infrastructure.',
     reason1: {
-      heading: 'No devops required',
+      heading: 'No experience required',
       subheading: `
         Easy to use and understand with no training or prior experience. 
         No need to learn another templating taxonomy, CLI, SDK or write any YAML.`,
     },
     reason2: {
-      heading: 'It’s your infrastructure',
+      heading: `It's your infrastructure`,
       subheading: `
         We deploy your React app directly to your AWS account. 
         You maintain full control of your infrastructure at all times, even after leaving Depploy.`,
@@ -155,10 +154,10 @@ export const words = {
       heading: 'Modern user experience',
       subheading: `
         The AWS console has a steep learning curve and an outdated UI. 
-        We built an easy-to-use, modern UI because we think design and user experience are important.`,
+        We built an easy-to-use, modern UI with design and user experience in mind.`,
     },
     reason4: {
-      heading: 'Avoid vendor lock-in',
+      heading: 'Reduce vendor lock-in',
       subheading: `
         Depploy offers flat and affordable pricing. 
         Alternatives get costly if you have a large team of developers, sites with high bandwidth usage, or lengthy build times each month.`,
@@ -219,13 +218,13 @@ export const words = {
             All of our data and credentials are encrypted using the AES
             encryption algorithm with a 256-bit key. We follow the principle of
             least privilege when generating your
-            {`role's`} permissions policy and provide you with a unique external
-            ID for increased security. You can read more about{' '}
+            {` role's `}permissions policy and provide you with a unique
+            external ID for increased security. You can read more about{' '}
             <Anchor href="#">cross-account access</Anchor>
             {' and '}
             <Anchor href="#">external IDs</Anchor> in the AWS docs. You also
             have the option of revoking access to Depploy from your AWS account
-            whenever {`you're`} not applying changes.
+            whenever{` you're `}not applying changes.
           </>,
         ],
       },

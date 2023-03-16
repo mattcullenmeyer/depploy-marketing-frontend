@@ -21,6 +21,7 @@ export function TopNav(): React.ReactElement {
       as="header"
       className={styles.top_nav_container}
       backgroundColor="colorBackgroundBody"
+      opacity="0.9"
       zIndex="zIndex90"
       boxShadow="shadowLow"
     >
