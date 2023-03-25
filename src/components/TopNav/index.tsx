@@ -20,8 +20,7 @@ export function TopNav(): React.ReactElement {
     <Box
       as="header"
       className={styles.top_nav_container}
-      backgroundColor="colorBackgroundBody"
-      opacity="0.9"
+      backgroundColor="colorBackgroundBody" // TODO: Add 0.9 alpha to light and dark backgrounds
       zIndex="zIndex90"
       boxShadow="shadowLow"
     >

@@ -4,19 +4,12 @@ import styles from './index.module.scss';
 
 interface Heading1Props {
   heading: React.ReactNode;
-  maxWidth: string;
 }
 
-export function Heading1({ heading, maxWidth }: Heading1Props) {
-  return (
-    <Box
-      marginBottom="space50"
-      maxWidth={maxWidth}
-      className={styles.heading1Container}
-    >
-      <Text as="h1" fontWeight="fontWeightBold" className={styles.heading1}>
-        {heading}
-      </Text>
-    </Box>
-  );
-}
+export const Heading1 = ({ heading }: Heading1Props) => (
+  <Box marginBottom="space50" className={styles.heading1Container}>
+    <Text as="h1" fontWeight="fontWeightBold" className={styles.heading1}>
+      {heading}
+    </Text>
+  </Box>
+);
