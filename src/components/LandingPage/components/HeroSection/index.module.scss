@@ -10,6 +10,10 @@
     .heroParagraph {
       text-align: center;
     }
+
+    .objectionBustingCopy {
+      justify-content: center;
+    }
   }
 
   .imageColumn {
@@ -29,6 +33,10 @@
 
       .heroParagraph {
         text-align: left;
+      }
+
+      .objectionBustingCopy {
+        justify-content: flex-start;
       }
     }
 

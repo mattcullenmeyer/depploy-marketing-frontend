@@ -1,4 +1,4 @@
-.ctaButtonContainer {
+.paddingBottom {
   padding-bottom: 2.25rem; // $space-100
 
   @media screen and (min-width: $desktop-min-width) {
@@ -15,6 +15,22 @@
   font-family: $font-family;
   width: 100%;
   transition: background-color 0.2s, color 0.2s;
+
+  @media screen and (min-width: $tablet-min-width) {
+    width: auto;
+  }
+}
+
+.flexStart {
+  justify-content: center;
+
+  @media screen and (min-width: $desktop-min-width) {
+    justify-content: flex-start;
+  }
+}
+
+.flexCenter {
+  justify-content: center;
 }
 
 .primaryBackground {
@@ -40,10 +56,4 @@
 .secondaryBackground:hover {
   border: solid 1px $color-secondary;
   color: $color-secondary;
-}
-
-@media screen and (min-width: $tablet-min-width) {
-  .ctaButton {
-    width: auto;
-  }
 }

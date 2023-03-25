@@ -10,21 +10,19 @@ import styles from './index.module.scss';
 interface HeroSectionProps {
   heading: string | React.ReactElement;
   subheading: string;
-  headingMaxWidth?: string;
-  subheadingMaxWidth?: string;
   buttonText: string;
   buttonUrl: string;
+  maxWidth?: string;
   objectionBustingCopy?: string;
   children: React.ReactElement;
 }
 
 export function HeroSection({
   heading,
-  headingMaxWidth = '640px',
   subheading,
-  subheadingMaxWidth = '640px',
   buttonText,
   buttonUrl,
+  maxWidth = '640px',
   objectionBustingCopy,
   children,
 }: HeroSectionProps) {
@@ -38,10 +36,10 @@ export function HeroSection({
       columnGap="space190"
       className={styles.heroSectionContainer}
     >
-      <Box className={styles.textColumn}>
-        <Heading1 heading={heading} maxWidth={headingMaxWidth} />
+      <Box className={styles.textColumn} maxWidth={maxWidth}>
+        <Heading1 heading={heading} />
         <Box className={styles.heroParagraph}>
-          <Paragraph text={subheading} maxWidth={subheadingMaxWidth} />
+          <Paragraph text={subheading} />
         </Box>
         <CtaButton
           buttonText={buttonText}
@@ -52,7 +50,11 @@ export function HeroSection({
         />
 
         {objectionBustingCopy && (
-          <Box marginTop="space70">
+          <Box
+            marginTop="space70"
+            display="flex"
+            className={styles.objectionBustingCopy}
+          >
             <HelpText>{objectionBustingCopy}</HelpText>
           </Box>
         )}

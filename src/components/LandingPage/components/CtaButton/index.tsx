@@ -17,22 +17,29 @@ export const CtaButton = ({
   marginBottom = false,
   center = false,
   secondaryColor = false,
-}: CtaButtonProps) => (
-  <Box
-    display="flex"
-    marginTop={marginTop ? 'space90' : 'space0'}
-    justifyContent={center ? 'center' : 'flex-start'}
-    className={marginBottom ? styles.ctaButtonContainer : ''}
-  >
-    <button
-      className={
-        styles.ctaButton +
-        ' ' +
-        (secondaryColor ? styles.secondaryBackground : styles.primaryBackground)
-      }
-      onClick={onClickButton}
+}: CtaButtonProps) => {
+  const paddingBottom = marginBottom ? styles.paddingBottom : '';
+  const justifyContent = center ? styles.flexCenter : styles.flexStart;
+  const className = `${paddingBottom} ${justifyContent}`;
+
+  return (
+    <Box
+      display="flex"
+      marginTop={marginTop ? 'space90' : 'space0'}
+      className={className}
     >
-      {buttonText}
-    </button>
-  </Box>
-);
+      <button
+        className={
+          styles.ctaButton +
+          ' ' +
+          (secondaryColor
+            ? styles.secondaryBackground
+            : styles.primaryBackground)
+        }
+        onClick={onClickButton}
+      >
+        {buttonText}
+      </button>
+    </Box>
+  );
+};
